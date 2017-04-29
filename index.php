@@ -29,12 +29,12 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 $tsql= "SELECT * FROM test";
 $getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
+echo ("Reading data from table test" . PHP_EOL);
 
-if($getResults){
-	echo "<br>Successfull Query to Azure DB";
-}else{
-	echo "<br>Query Error to Azure DB";
+if ($getResults == FALSE)
+    echo (sqlsrv_errors());
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+    echo ($row['id'] . PHP_EOL);
 }
 
 sqlsrv_free_stmt($getResults);
