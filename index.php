@@ -32,9 +32,9 @@ $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 
 if($getResults){
-	echo "\rSuccessfull Query to Azure DB";
+	echo "<br>Successfull Query to Azure DB";
 }else{
-	echo "\rQuery Error to Azure DB";
+	echo "<br>Query Error to Azure DB";
 }
 
 sqlsrv_free_stmt($getResults);
