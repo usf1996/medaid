@@ -14,6 +14,7 @@ else{
 		$usertype = 0;
 		echo 0;
 	}else{
+		echo sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
 		while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 			if($email == $row['fname'] && $password == $row['pass']){
 				switch($row['usertype']){
