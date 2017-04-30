@@ -1,5 +1,3 @@
-<html>
-<head>
 <?php
 
 $serverName = "medaid.database.windows.net";
@@ -10,13 +8,6 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-?>
-</head>
-
-<body>
-<h1>PHP connect to Azure</h1>
- 
-<?php
 
 $tsql= "SELECT * FROM users";
 $getResults= sqlsrv_query($conn, $tsql);
@@ -31,6 +22,3 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 sqlsrv_free_stmt($getResults);
 
 ?>
- 
-</body>
-</html>
