@@ -12,7 +12,10 @@ $dob = $_POST['bday'];
 $bloodtype = $_POST['selectbt'];
 
 $tsql= "insert into citizen(fname, lname, username, email, pass, gender, dob, phonenum, blooftype, usertype)
-		values('$fname', '$lname', '$username', '$email', '$pass', '$gender', '$dob', '$phonenum', '$bloodtype', 'citizen')";
+		values(?, ?, ?, ?, ?, ?, ?, ?, ?, 'citizen')";
+
+$params = array($fname, $lname, $username, $email, $pass, $gender, $dob, $phonenum, $bloodtype);
+$getResults= sqlsrv_query($conn, $tsql, $params);
 
 if ($getResults == FALSE)
     echo print_r(sqlsrv_errors(), true);
