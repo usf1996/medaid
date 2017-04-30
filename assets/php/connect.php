@@ -10,4 +10,6 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 if($conn)
 	echo "Connection Successfull";
+else
+	echo "Connection Not Successfull"
 ?>
