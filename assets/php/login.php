@@ -16,7 +16,7 @@ else{
 		echo 0;
 	}else{
 		while ($row) {
-			if($email == $row['fname'] && $password == $row['pass']){
+			if($email == $row['email'] && $password == $row['pass']){
 				switch($row['usertype']){
 					case "citizen":{
 						$usertype = 1;
