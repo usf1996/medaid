@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <?php
 $serverName = "medaid.database.windows.net";
 $connectionOptions = array(
@@ -29,3 +33,6 @@ while ($row = sqlsrv_fetch_array($getResults)) {
 }
 sqlsrv_free_stmt($getResults);
 ?>
+
+</body>
+</html>
