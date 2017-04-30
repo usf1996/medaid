@@ -10,7 +10,7 @@ $tsql= "SELECT email, pass FROM users WHERE email = '$email' AND pass = '$passwo
 $getResults= sqlsrv_query($conn, $tsql);
 
 if ($getResults == FALSE)
-    echo (sqlsrv_errors());
+    echo "nayyak";
 
 while ($row = sqlsrv_fetch_array($getResults)) {
     echo "sex";
