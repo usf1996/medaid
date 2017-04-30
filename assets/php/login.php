@@ -11,6 +11,9 @@ if ($getResults == FALSE)
     echo (sqlsrv_errors());
 else{
 	while ($row = sqlsrv_fetch_array($getResults)) {
+		if($row == 0){
+			echo 0;
+		}
 		if($email == $row['email'] && $password == $row['pass']){
 			switch($row['usertype']){
 				case "citizen":{
