@@ -36,6 +36,8 @@ else{
 						echo "no usertype";
 					}
 				}
+			}else{
+				echo "no user";
 			}
 		}
 	}
