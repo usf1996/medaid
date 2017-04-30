@@ -3,7 +3,7 @@ include connect.php;
 
 $email = $_POST['email'];
 $password  = $_POST['password'];
-echo '$email' . ' $password';
+echo "$email" . " $password";
 
 $tsql= "SELECT email, pass FROM users WHERE email = '$email' AND pass = '$password'";
 
