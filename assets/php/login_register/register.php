@@ -1,5 +1,5 @@
 <?php
-include 'assets\php\connect.php';
+include 'connect.php';
 
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];

@@ -1,5 +1,5 @@
 <?php
-include 'assets\php\connect.php';
+include 'connect.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
