@@ -31,7 +31,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="assets\php\login.php" method="post" role="form" style="display: block;">
+								<form id="login-form" action="assets\php\login_register\login.php" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
 									</div>
@@ -55,18 +55,52 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+								<form id="register-form" action="assets\php\login_register\register.php" method="post" role="form" style="display: none;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" name="username" id="username" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+										<input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+										<input type="email" name="email" id="email" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<label>Blood Type:</label>
+										<select name="selectbt" class="form-control">
+										  <option>A+</option>
+										  <option>A-</option>
+										  <option>B+</option>
+										  <option>B-</option>
+										  <option>O+</option>
+										  <option>O-</option>
+										  <option>AB+</option>
+										  <option>AB-</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Gender:</label>
+										<select name="selectg" class="form-control">
+										  <option>Male</option>
+										  <option>Female</option>
+										  <option>Other</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Date of Birth:</label>
+										<input type="date" name="bday">
+									</div>
+									<div class="form-group">
+										<input type="text" name="phonenum" id="phonenum" class="form-control" placeholder="Phone Number" value="">
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -86,7 +120,7 @@
 
      <!-- Core Scripts - Include with every page -->
     <script src="assets/plugins/jquery-1.10.2.js"></script>
-    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function() {
 

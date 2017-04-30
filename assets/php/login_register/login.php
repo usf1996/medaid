@@ -1,10 +1,10 @@
 <?php
-include 'connect.php';
+include 'assets\php\connect.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$tsql= "SELECT * FROM users WHERE email = '$email' AND pass = '$password'";
+$tsql= "SELECT * FROM citizen WHERE email = '$email' AND pass = '$password'";
 $getResults= sqlsrv_query($conn, $tsql);
 
 if ($getResults == FALSE)
