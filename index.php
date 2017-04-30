@@ -57,50 +57,52 @@
 								</form>
 								<form id="register-form" action="assets\php\login_register\register.php" method="post" role="form" style="display: none;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" class="form-control" placeholder="Username" value="">
+										<input type="text" name="username" id="username" class="form-control" placeholder="Username" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" value="">
+										<input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" value="">
+										<input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" class="form-control" placeholder="Email Address" value="">
+										<input type="email" name="email" id="email" class="form-control" placeholder="Email Address" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+										<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirm Password">
+										<input type="password" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirm Password" required>
 									</div>
 									<div class="form-group">
 										<label>Blood Type:</label>
-										<select name="selectbt" class="form-control">
-										  <option>A+</option>
-										  <option>A-</option>
-										  <option>B+</option>
-										  <option>B-</option>
-										  <option>O+</option>
-										  <option>O-</option>
-										  <option>AB+</option>
-										  <option>AB-</option>
+										<select id="bloodtype" name="selectbt" class="form-control">
+											<option selected disabled>Select Blood Type</option>
+											<option>A+</option>
+											<option>A-</option>
+											<option>B+</option>
+											<option>B-</option>
+											<option>O+</option>
+											<option>O-</option>
+											<option>AB+</option>
+											<option>AB-</option>
 										</select>
 									</div>
 									<div class="form-group">
 										<label>Gender:</label>
-										<select name="selectg" class="form-control">
-										  <option>Male</option>
-										  <option>Female</option>
-										  <option>Other</option>
+										<select id="gender" name="selectg" class="form-control">
+											<option selected disabled>Select Gender</option>
+											<option>Male</option>
+											<option>Female</option>
+											<option>Other</option>
 										</select>
 									</div>
-									<div class="form-group">
+									<div class="form-group" required>
 										<label>Date of Birth:</label>
 										<input type="date" name="bday">
 									</div>
 									<div class="form-group">
-										<input type="text" name="phonenum" id="phonenum" class="form-control" placeholder="Phone Number" value="">
+										<input type="text" name="phonenum" id="phonenum" class="form-control" placeholder="Phone Number" value="" required>
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -140,7 +142,6 @@
 			});
 
 		});
-
 	</script>
 
 </body>
