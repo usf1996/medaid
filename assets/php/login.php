@@ -32,6 +32,9 @@ else{
 						echo 3;
 						break;
 					}
+					default:{
+						echo "no usertype";
+					}
 				}
 			}
 		}
