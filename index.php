@@ -23,7 +23,7 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form method="post" action="assets\php\login.php">
+                        <form role="form" method="post" action="assets\php\login.php">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
