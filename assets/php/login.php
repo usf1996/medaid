@@ -1,5 +1,17 @@
 <?php
-include connect.php;
+$serverName = "medaid.database.windows.net";
+$connectionOptions = array(
+    "Database" => "medaid",
+    "Uid" => "medaid",
+    "PWD" => "Test1234"
+);
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn)
+	echo "Connection Successfull";
+else
+	echo "Connection Not Successfull"
 
 $email = $_POST['email'];
 $password  = $_POST['password'];
