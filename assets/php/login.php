@@ -21,7 +21,7 @@ $email = $_POST['email'];
 $password  = $_POST['password'];
 echo "$email" . " $password";
 
-$tsql= "SELECT email, pass FROM users WHERE email = '$email' AND pass = '$password'";
+$tsql= "SELECT * FROM users";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
