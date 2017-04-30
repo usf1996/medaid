@@ -1,45 +1,51 @@
+<!DOCTYPE html>
 <html>
-<head>
-<?php
 
-$serverName = "medaid.database.windows.net";
-$connectionOptions = array(
-    "Database" => "medaid",
-    "Uid" => "medaid",
-    "PWD" => "Test1234"
-);
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-?>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Aid</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+
 </head>
 
-<body>
-<h1>PHP connect to Azure</h1>
- 
-<?php
+<body class="body-Login-back">
 
-$serverName = "medaid.database.windows.net";
-$connectionOptions = array(
-    "Database" => "medaid",
-    "Uid" => "medaid",
-    "PWD" => "Test1234"
-);
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
+    <div class="container">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">                  
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="post" action="assets\php\login.php">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Login">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-$tsql= "SELECT * FROM test";
-$getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table dbo.test" . PHP_EOL . "<br>");
+     <!-- Core Scripts - Include with every page -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
 
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['id'] . PHP_EOL . "<br>");
-}
-
-sqlsrv_free_stmt($getResults);
-
-?>
- 
 </body>
+
 </html>
