@@ -1,5 +1,5 @@
 <?php
-include connect.php;
+include 'connect.php';
 
 $tsql= "SELECT * FROM users";
 $getResults= sqlsrv_query($conn, $tsql);
