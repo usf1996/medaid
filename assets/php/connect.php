@@ -1,9 +1,9 @@
 <?php
-$serverName = "your_server.database.windows.net";
+$serverName = "medaid.database.windows.net";
 $connectionOptions = array(
-    "Database" => "your_database",
-    "Uid" => "your_username",
-    "PWD" => "your_password"
+    "Database" => "medaid",
+    "Uid" => "medaid",
+    "PWD" => "Test1234"
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
