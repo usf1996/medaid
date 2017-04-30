@@ -22,7 +22,7 @@
     <div id="wrapper">
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
         <!-- navbar-header -->
-        <div class="navbar-header"> <a class="navbar-brand" href="dashboard_dc.html"> <img src="../assets/img/logo.png" alt="" /> </a> </div>
+        <div class="navbar-header"> <a class="navbar-brand" href="dashboard_dc.php"> <img src="../assets/img/logo.png" alt="" /> </a> </div>
         <!-- end navbar-header -->
         <!-- navbar-top-links -->
         <ul class="nav navbar-top-links navbar-right">
@@ -46,7 +46,7 @@
               <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a> </li>
               <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a> </li>
               <li class="divider"></li>
-              <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a> </li>
+              <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a> </li>
             </ul>
             <!-- end dropdown-user -->
           </li>
@@ -65,7 +65,6 @@
             <li>
               <!-- user image section-->
               <div class="user-section">
-                <div class="user-section-inner"> <img src="../assets/img/user.jpg" alt=""> </div>
                 <div class="user-info">
                   <div>Jonny <strong>Deen</strong></div>
                   <div class="user-text-online"> <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online </div>
@@ -73,15 +72,15 @@
               </div>
               <!--end user image section-->
             </li>
-            <li class=""> <a href="dashboard_dc.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+            <li class=""> <a href="dashboard_dc.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
             <li> <a href="#"><i class="fa fa-edit fa-fw"></i> Create Forms<span class="fa arrow"></span></a>
               <ul class="nav nav-second-level">
-                <li> <a href="donation_request_form.html"> Donation Request</a> </li>
-                <li> <a href="blood_drive_event_form.html"> Blood Drive Event</a> </li>
+                <li> <a href="donation_request_form.php"> Donation Request</a> </li>
+                <li> <a href="blood_drive_event_form.php"> Blood Drive Event</a> </li>
               </ul>
               <!-- second-level-items -->
             </li>
-            <li> <a href="donors_log.html" class="selected"><i class="fa fa-table fa-fw"></i> Donors Log</a> </li>
+            <li> <a href="donors_log.php" class="selected"><i class="fa fa-table fa-fw"></i> Donors Log</a> </li>
           </ul>
           <!-- end side-menu -->
         </div>

@@ -24,7 +24,7 @@
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
             <!-- navbar-header -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="dashboard_dc.html">
+                <a class="navbar-brand" href="dashboard_rc.php">
                     <img src="../assets/img/logo.png" alt="" />
                 </a>
             </div>
@@ -58,7 +58,7 @@
                         </li>
                     </ul>
                     <!-- end dropdown-alerts -->
-              </li>
+                </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -71,7 +71,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
@@ -80,7 +80,7 @@
             </ul>
             <!-- end navbar-top-links -->
 
-      </nav>
+        </nav>
         <!-- end navbar top -->
 
         <!-- navbar side -->
@@ -92,9 +92,6 @@
                     <li>
                         <!-- user image section-->
                         <div class="user-section">
-                            <div class="user-section-inner">
-                                <img src="../assets/img/user.jpg" alt="">
-                            </div>
                             <div class="user-info">
                                 <div>Jonny <strong>Deen</strong></div>
                                 <div class="user-text-online">
@@ -106,24 +103,13 @@
                     </li>
                     
                     <li class="selected">
-                        <a href="dashboard_dc.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="dashboard_rc.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
-                    
                     <li>
-                        <a href="#"><i class="fa fa-edit fa-fw"></i> Create Forms<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="donation_request_form.html"> Donation Request</a>
-                            </li>
-                            <li>
-                                <a href="blood_drive_event_form.html"> Blood Drive Event</a>
-                            </li>
-                        </ul>
-                        <!-- second-level-items -->
+                       <a href="first_aid_tips.php"><i class="fa fa-edit fa-fw"></i> First Aid Tips</a>
                     </li>
-                    
                     <li>
-                       <a href="donors_log.html"><i class="fa fa-table fa-fw"></i> Donors Log</a>
+                       <a href="cases_log.php"><i class="fa fa-table fa-fw"></i> Cases Log</a>
                     </li>
                 </ul>
                 <!-- end side-menu -->
@@ -132,106 +118,15 @@
         </nav>
         <!-- end navbar side -->
         <!--  page-wrapper -->
-	  <div id="page-wrapper">
-<div class="row">
-		<!--  page header -->
-		<div class="col-lg-12">
+		<div id="page-wrapper">
+			<div class="row">
+				<!--  page header -->
+				<div class="col-lg-12">
 					<h1 class="page-header">Dashboard</h1>
 				</div>
 				<!-- end  page header -->
           	</div>
-<div class="row">
-	  <div class="col-lg-12">
-			    <!-- Advanced Tables -->
-			    <div class="panel panel-default">
-			      <div class="panel-heading">Blood Donation Requests</div>
-			      <div class="panel-body">
-			        <div class="table-responsive">
-			          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-			            <thead>
-								<tr>
-								  <th>Blood Type</th>
-								  <th>Hospital</th>
-								</tr>
-					    </thead>
-					    <tbody>
-								<tr>
-								  <td>O+</td>
-								  <td>Saint George</td>
-								</tr>
-								<tr>
-								  <td>AB+</td>
-								  <td>Hotel Dieu</td>
-								</tr>
-								<tr>
-								  <td>A-</td>
-								  <td>Sacre Coeur</td>
-								</tr>
-					    </tbody>
-		              </table>
-		            </div>
-		          </div>
-		        </div>
-			    <!--End Advanced Tables -->
-		      </div>
-	    </div>
-		<div class="row">
-			  <div class="col-lg-12">
-			    <!-- Advanced Tables -->
-			    <div class="panel panel-default">
-			      <div class="panel-heading">Blood Drive Events</div>
-			      <div class="panel-body">
-			        <div class="table-responsive">
-			          <table class="table table-striped table-bordered table-hover" id="dataTables-example2">
-			            <thead>
-									<tr>
-									  <th>Event Name</th>
-									  <th>Location</th>
-									  <th>Start Date</th>
-									  <th>End Date</th>
-									  <th>Start Time</th>
-									  <th>End Time</th>
-									</tr>
-								  </thead>
-								  <tbody>
-									<tr>
-									  <td>LAU Blood Drive</td>
-									  <td>LAU Byblos</td>
-									  <td>07-April-2017</td>
-									  <td>08-April-2017</td>
-									  <td>08:00 AM</td>
-									  <td>03:00 PM</td>
-									</tr>
-									<tr>
-									  <td>AUB Blood Drive</td>
-									  <td>AUB</td>
-									  <td>09-April-2017</td>
-									  <td>12-April-2017</td>
-									  <td>08:00 AM</td>
-									  <td>03:00 PM</td>
-									</tr>
-								  </tbody>
-		              </table>
-		            </div>
-		          </div>
-		        </div>
-			    <!--End Advanced Tables -->
-		      </div>
-	    </div>
-		<div class="row">
-		  <div class="col-lg-12">
-		    <!--  Line Chart -->
-		    <div class="panel panel-default">
-		      <div class="panel-heading">Blood Units Available</div>
-		      <div class="panel-body">
-		        <div id="morris-line-chart"></div>
-	          </div>
-	        </div>
-		    <!--  End Line Chart -->
-	      </div>
-	    </div> 
-        	
-		</div>
+</div>
         <!-- end page-wrapper -->
 
     </div>
