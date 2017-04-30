@@ -1,7 +1,11 @@
 <?php
 include connect.php;
 
-$tsql= "SELECT email, pass FROM users WHERE email = '$_POST['email']' AND pass = '$_POST['password']'";
+$email = $_POST['email'];
+$password  = $_POST['password'];
+echo '$email' . ' $password';
+
+$tsql= "SELECT email, pass FROM users WHERE email = '$email' AND pass = '$password'";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
