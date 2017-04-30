@@ -13,7 +13,7 @@ $bloodtype = $_POST['selectbt'];
 
 $tsql= "insert into citizen(fname, lname, username, email, pass, gender, dob, phonenum, blooftype, usertype)
 		values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
+echo '$fname'. '$lname'. '$username'. '$email'. '$pass'. '$gender'. '$dob'. '$phonenum'. '$bloodtype'. "citizen";
 $params = array('$fname', '$lname', '$username', '$email', '$pass', '$gender', '$dob', '$phonenum', '$bloodtype', "citizen");
 $getResults= sqlsrv_query($conn, $tsql, $params);
 
