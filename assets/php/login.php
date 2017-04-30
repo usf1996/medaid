@@ -10,11 +10,10 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 else{
-	echo $rows = sqlsrv_fetch_array($getResults);
-	if($rows == 0){
+	if(!sqlsrv_has_rows($getResults)){
 		echo 0;
 	}else{
-		foreach ($rows as $row) {
+		while ($row = sqlsrv_fetch_array($getResults)) {
 			if($email == $row['email'] && $password == $row['pass']){
 				switch($row['usertype']){
 					case "citizen":{
@@ -38,7 +37,7 @@ else{
 				}
 			}
 		}
-	}
+	}	
 }
 
 sqlsrv_free_stmt($getResults);
