@@ -10,35 +10,34 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 else{
-	$rows = sqlsrv_fetch_array($getResults);
+	echo $rows = sqlsrv_fetch_array($getResults);
 	if($rows == 0){
 		echo 0;
 	}else{
 		foreach ($rows as $row) {
-		
-		if($email == $row['email'] && $password == $row['pass']){
-			switch($row['usertype']){
-				case "citizen":{
-					$usertype = 1;
-					echo 1;
-					break;
-				}
-				case "donation center":{
-					$usertype = 2;
-					echo 2;
-					break;
-				}
-				case "red cross":{
-					$usertype = 3;
-					echo 3;
-					break;
-				}
-				default:{
-					echo "no usertype";
+			if($email == $row['email'] && $password == $row['pass']){
+				switch($row['usertype']){
+					case "citizen":{
+						$usertype = 1;
+						echo 1;
+						break;
+					}
+					case "donation center":{
+						$usertype = 2;
+						echo 2;
+						break;
+					}
+					case "red cross":{
+						$usertype = 3;
+						echo 3;
+						break;
+					}
+					default:{
+						echo "no usertype";
+					}
 				}
 			}
 		}
-	}
 	}
 }
 
