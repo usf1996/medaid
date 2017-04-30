@@ -9,7 +9,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 if($conn)
-	$isConn = true;
+	echo '<script>console.log("Connection Successfull")</script>';
 else
-	$isConn = false;
+	echo '<script>console.log("Connection Not Successfull")</script>';
 ?>
