@@ -94,7 +94,7 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-info">
-                                <div id="dCenterName">Jonny</div>
+                                <span id="dCenterName">Jonny</span>
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                                 </div>
