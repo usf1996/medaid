@@ -15,6 +15,8 @@
     <link href="../assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
 <!--    Table JS-->
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+	
+	<?php include '../assets/php/test.php'; ?>
 </head>
 
 <body>

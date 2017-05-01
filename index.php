@@ -55,7 +55,7 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="assets\php\login_register\register.php" method="post" role="form" style="display: none;">
+								<form id="register-form" action="assets/php/login_register/register.php" method="post" role="form" style="display: none;">
 									<div class="form-group">
 										<input type="text" name="username" id="username" class="form-control" placeholder="Username" value="" required>
 									</div>
@@ -160,7 +160,7 @@
 				/* get some values from elements on the page: */
 				$.ajax({
 					type: 'post',
-					url: 'assets\\php\\login_register\\login.php',
+					url: 'assets/php/login_register/login.php',
 					data: formData,
 					dataType: 'json',
 					encode: true
