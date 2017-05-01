@@ -150,21 +150,36 @@
 	</button>
 	
 	<script type="text/javascript">
-		$("#login-form").submit(function(event) {
+		$(document).ready(function() {
+			$("#login-form").submit(function(event) {
 
-			/* stop form from submitting normally */
-			event.preventDefault();
+				/* stop form from submitting normally */
+				event.preventDefault();
 
-			/* get some values from elements on the page: */
-			$.ajax({
-            type: 'post',
-            url: 'assets\\php\\login_register\\login.php',
-            data: $('form').serialize(),
-            success: function () {
-              alert('form was submitted');
-            }
-          });
-		});
+				var formData = {
+					'email'             : $('input[name=email]').val(),
+					'password'    : $('input[name=password]').val()
+				};
+				
+				/* get some values from elements on the page: */
+				$.ajax({
+				type: 'post',
+				url: 'assets\\php\\login_register\\login.php',
+				data: formData,
+				dataType: 'json',
+				encode: true
+			  });
+			  
+			  .done(function(data) {
+
+					// log data to the console so we can see
+					console.log(data); 
+
+					// here we will handle errors and validation messages
+				});
+			});
+		}
+		
 		/*function ajaxResponse(url, cFunction){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
