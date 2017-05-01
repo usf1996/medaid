@@ -160,7 +160,8 @@
 			
 			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("password=" + document.getElementById("").innerHTML + "&email=" + dc1@dc.com);
+			xhttp.send("password=" + document.getElementById("password").innerHTML + "&email=" + document.getElementById("email").innerHTML);
+			console.log(document.getElementById("password").innerHTML);
 		}
 		
 		function loadDoc(xhttp){
