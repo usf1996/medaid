@@ -269,7 +269,7 @@
 		}
 		
 		function getLoginData(xhttp) {
-			console.log(xhttp.responseText);
+			console.log(JSON.parse(xhttp.responseText));
 		}
 	</script>
 </body>
