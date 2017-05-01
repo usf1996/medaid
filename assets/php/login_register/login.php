@@ -25,6 +25,7 @@ else{
 				switch($row['usertype']){
 					case "citizen":{
 						$data['usertype'] = 1;
+						$data['userid'] = $row['userid'];
 						$data['fname'] = $row['fname'];
 						$data['lname'] = $row['lname'];
 						$data['username'] = $row['username'];
@@ -37,6 +38,7 @@ else{
 					}
 					case "donation center":{
 						$data['usertype'] = 2;
+						$data['dcenterid'] = $row['dcenterid'];
 						$data['dcentername'] = $row['dcentername'];
 						$data['email'] = $row['email'];
 						$data['addr'] = $row['addr'];
@@ -47,6 +49,7 @@ else{
 					}
 					case "red cross":{
 						$data['usertype'] = 3;
+						$data['redcrossid'] = $row['redcrossid'];
 						$data['redcrossname'] = $row['redcrossname'];
 						$data['email'] = $row['email'];
 						$data['addr'] = $row['addr'];
