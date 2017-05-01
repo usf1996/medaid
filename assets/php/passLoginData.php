@@ -6,9 +6,7 @@ $data = array();
 session_start();
 $data = $_SESSION['loginData'];
 
-$usertype = $data['usertype'];
-
-switch($usertype){
+switch($data['usertype']){
 	case 1:{
 		$id = $data['userid'];
 		$tsql= "SELECT * FROM citizen WHERE userid = '$id'";
@@ -73,6 +71,9 @@ switch($usertype){
 			}
 		}
 		break;
+	}
+	default:{
+		echo "<script>console.log('asd')</script>";
 	}
 }
 
