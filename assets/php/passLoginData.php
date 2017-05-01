@@ -3,6 +3,7 @@ include 'connect.php';
 
 $data = array();
 
+session_start();
 $data = $_SESSION['loginData'];
 
 $usertype = $data['usertype'];
