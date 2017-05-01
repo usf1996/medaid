@@ -162,7 +162,7 @@
 			console.log(document.getElementById("password").innerHTML);
 			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("password=" + document.getElementById("password").innerHTML + "&email=" + document.getElementById("email").innerHTML);
+			xhttp.send("password=" + "dc1" + "&email=" + "dc1@dc.com");
 		}
 		
 		function loadDoc(xhttp){
