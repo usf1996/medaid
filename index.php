@@ -158,7 +158,7 @@
 				}
 			};
 			
-			xhttp.open("POST", url, false);
+			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			console.log(document.getElementById("password").innerHTML);
 			xhttp.send("password=" + document.getElementById("password").innerHTML + "&email=" + document.getElementById("email").innerHTML);
