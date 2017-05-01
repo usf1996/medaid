@@ -165,19 +165,19 @@
 		
 		function loadDoc(xhttp){
 			switch(xhttp.responseText){
-				case 0:{
+				case '0':{
 					alert("Wrong Login Credentials");
 					break;
 				}
-				case 1:{
+				case '1':{
 					header('Location: http://medaid.azurewebsites.net/');
 					break;
 				}
-				case 2:{
+				case '2':{
 					window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 					break;
 				}
-				case 3:{
+				case '3':{
 					window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
 					break;
 				}
