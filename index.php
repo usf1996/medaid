@@ -146,7 +146,7 @@
 	</script>
 	
 	<button type="button"
-		onclick="ajaxResponse('assets\php\login_register\login.php', loadDoc)">Change Content
+		onclick="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)">Change Content
 	</button>
 	
 	<script type="text/javascript">
