@@ -261,7 +261,7 @@
 				/* get some values from elements on the page: */
 				var xhr = $.ajax({
 					//type: 'post',
-					url: '../assets/php/passLoginData.php',
+					url: '/assets/php/passLoginData.php',
 					//data: formData,
 					dataType: 'json',
 					encode: true
