@@ -25,14 +25,34 @@ else{
 				switch($row['usertype']){
 					case "citizen":{
 						$data['usertype'] = 1;
+						$data['fname'] = $row['fname'];
+						$data['lname'] = $row['lname'];
+						$data['username'] = $row['username'];
+						$data['email'] = $row['email'];
+						$data['gender'] = $row['gender'];
+						$data['dob'] = $row['dob'];
+						$data['phonenum'] = $row['phonenum'];
+						$data['bloodtype'] = $row['bloodtype'];
 						break;
 					}
 					case "donation center":{
 						$data['usertype'] = 2;
+						$data['dcentername'] = $row['dcentername'];
+						$data['email'] = $row['email'];
+						$data['addr'] = $row['addr'];
+						$data['phonenum'] = $row['phonenum'];
+						$data['long'] = $row['long'];
+						$data['lat'] = $row['lat'];
 						break;
 					}
 					case "red cross":{
 						$data['usertype'] = 3;
+						$data['redcrossname'] = $row['redcrossname'];
+						$data['email'] = $row['email'];
+						$data['addr'] = $row['addr'];
+						$data['phonenum'] = $row['phonenum'];
+						$data['long'] = $row['long'];
+						$data['lat'] = $row['lat'];
 						break;
 					}
 				}
@@ -43,6 +63,8 @@ else{
 
 sqlsrv_free_stmt($getResults);
 
+session_start();
+$_SESSION['loginData'] = $data;
 echo json_encode($data);
 
 ?>
