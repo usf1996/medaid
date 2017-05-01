@@ -29,7 +29,7 @@ else{
 				}
 				case "donation center":{
 					$data['usertype'] = 2;
-					$data['dcenterid'] = $row['dcenterid'];
+					$data['dcenterid'] = $row['usertype'];
 					echo json_encode($data);
 					break;
 				}
