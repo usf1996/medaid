@@ -256,21 +256,17 @@
     </script>
 	
 	<script type="text/javascript">
-		function loadDoc(url, cFunction) {
-			var xhttp;
-			xhttp=new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					cFunction(this);
-				}
-			};
-			xhttp.open("POST", url, true);
-			xhttp.send();
-		}
-		
-		function getLoginData(xhttp) {
-			console.log(xhttp.responseText);
-		}
+	$(document).ready(function() {
+		var xhttp;
+		xhttp=new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				console.log(xhttp.responseText);
+			}
+		};
+		xhttp.open("POST", "passLoginData.php", true);
+		xhttp.send();
+	});
 	</script>
 </body>
 
