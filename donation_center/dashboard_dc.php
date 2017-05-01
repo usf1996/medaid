@@ -16,10 +16,9 @@
 <!--    Table JS-->
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	
-	<?php include '../assets/php/passLoginData.php'; ?>
 </head>
 
-<body>
+<body onload="loadDoc('../assets/php/passLoginData.php', getLoginData)">
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
@@ -255,6 +254,23 @@
             $('#dataTables-example').dataTable();
         });
     </script>
+	<script type="text/javascript">
+		function loadDoc(url, cFunction) {
+			var xhttp;
+			xhttp=new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
+				}
+			};
+			xhttp.open("POST", url, true);
+			xhttp.send();
+		}
+		
+		function getLoginData(xhttp) {
+			console.log(xhttp.responseText);
+		}
+	</script>
 </body>
 
 </html>

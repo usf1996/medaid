@@ -32,7 +32,7 @@ if ($getResults == FALSE)
     echo (sqlsrv_errors());
 else{
 	while ($row = sqlsrv_fetch_array($getResults)) {
-		
+		$data = $row;
 	}
 }
 
