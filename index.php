@@ -146,7 +146,7 @@
 	</script>
 	
 	<script type="text/javascript">
-		$(document).ready(function() {
+		//$(document).ready(function() {
 			$("#login-form").submit(function(event) {
 
 				/* stop form from submitting normally */
@@ -187,7 +187,7 @@
 					}
 				});
 			});
-		});
+		//});
 	</script>
 
 </body>
