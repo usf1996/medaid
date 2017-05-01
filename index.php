@@ -158,7 +158,7 @@
 				}
 			};
 			
-			xhttp.open("POST", url, true);
+			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("password=dc1&email=dc1@dc.com");
 		}
