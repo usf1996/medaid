@@ -31,7 +31,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" onsubmit="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)" role="form" style="display: block;">
+								<form id="login-form" onsubmit="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
 									</div>
