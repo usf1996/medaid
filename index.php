@@ -33,10 +33,10 @@
 							<div class="col-lg-12">
 								<form id="login-form" onsubmit="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
+										<input type="email" name="email" id="emailLogin" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" required>
+										<input type="password" name="password" id="passwordLogin" tabindex="2" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -158,7 +158,7 @@
 				}
 			};
 			
-			console.log(document.getElementById("login-form").getElementById("email"));
+			console.log(document.getElementById("passwordLogin").innerHTML);
 			console.log(document.getElementById("password").innerHTML);
 			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
