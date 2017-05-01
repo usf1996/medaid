@@ -31,7 +31,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="assets\php\login_register\login.php" method="post" role="form" style="display: block;">
+								<form id="login-form" onsubmit="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
 									</div>
@@ -160,13 +160,13 @@
 			
 			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("password=dc1&email=dc1@dc.com");
+			xhttp.send("password=" + document.getElementById("").innerHTML + "&email=" + dc1@dc.com);
 		}
 		
 		function loadDoc(xhttp){
 			switch(xhttp.responseText){
 				case '0':{
-					alert("Wrong Login Credentials");
+					alert("Wrong Login Credentials, Please Try Again");
 					break;
 				}
 				case '1':{
