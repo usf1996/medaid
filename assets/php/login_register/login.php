@@ -20,7 +20,7 @@ else{
 	if(!sqlsrv_has_rows($getResults)){
 		$data['usertype'] = 0;
 	}else{
-		while ($row = sqlsrv_fetch_array($getResults)) {
+		while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 			switch($row['usertype']){
 				case "citizen":{
 					$data['usertype'] = 1;
@@ -29,8 +29,8 @@ else{
 				}
 				case "donation center":{
 					$data['usertype'] = 2;
-					//$data['dcenterid'] = $row['dcenterid'];
-					echo json_encode($row['dcenterid']);
+					$data['dcenterid'] = $row['dcenterid'];
+					echo json_encode($data);
 					break;
 				}
 				case "red cross":{
