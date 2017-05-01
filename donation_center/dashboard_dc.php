@@ -257,7 +257,7 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
-				
+				console.log("asd");
 				/* get some values from elements on the page: */
 				var xhr = $.ajax({
 					//type: 'post',
