@@ -41,7 +41,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="3" class="form-control btn btn-login" value="Log In">
 											</div>
 										</div>
 									</div>
@@ -49,7 +49,7 @@
 										<div class="row">
 											<div class="col-lg-12">
 												<div class="text-center">
-													<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+													<a href="http://phpoll.com/recover" tabindex="4" class="forgot-password">Forgot Password?</a>
 												</div>
 											</div>
 										</div>
@@ -145,35 +145,44 @@
 		});
 	</script>
 	
+	<button type="button"
+		onclick="ajaxResponse('login.php', loadDoc)">Change Content
+	</button>
+	
 	<script type="text/javascript">
-		var xhttp = new XMLHttpRequest();
-		
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				switch(this.responseText){
-					case 0:{
-						alert("Wrong Login Credentials");
-						break;
-					}
-					case 1:{
-						header('Location: http://medaid.azurewebsites.net/');
-						break;
-					}
-					case 2:{
-						window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
-						break;
-					}
-					case 3:{
-						window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
-						break;
-					}
+		function ajaxResponse(url, cFunction){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
 				}
-			 console.log(this.responseText);
-			}
-		};
+			};
+			
+			xhttp.open("POST", url, true);
+			xhttp.send();
+		}
 		
-		xhttp.open("POST", "assets\php\login_register\login.php", true);
-		xhttp.send();
+		function loadDoc(xhttp){
+			switch(xhttp.responseText){
+				case 0:{
+					alert("Wrong Login Credentials");
+					break;
+				}
+				case 1:{
+					header('Location: http://medaid.azurewebsites.net/');
+					break;
+				}
+				case 2:{
+					window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
+					break;
+				}
+				case 3:{
+					window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
+					break;
+				}
+			}
+		 console.log(xhttp.responseText);
+		}
 	</script>
 
 </body>

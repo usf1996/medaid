@@ -41,7 +41,7 @@ else{
 
 sqlsrv_free_stmt($getResults);
 
-echo json_encode($usertype);
+echo $usertype;
 /*
 switch($usertype){
 	case 0:{
