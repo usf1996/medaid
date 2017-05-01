@@ -74,12 +74,10 @@ switch($data['usertype']){
 	}
 	default:{
 		$data['asd'] = "asd";
-		echo "<script>console.log('asd')</script>";
 		break;
 	}
 }
 
 sqlsrv_free_stmt($getResults);
-echo json_encode($data);
 
 ?>
