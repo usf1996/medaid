@@ -178,7 +178,7 @@
 					// here we will handle errors and validation messages
 				});
 			});
-		}
+		});
 		
 		/*function ajaxResponse(url, cFunction){
 			var xhttp = new XMLHttpRequest();
