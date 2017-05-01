@@ -18,7 +18,7 @@
 	
 </head>
 
-<body onload="loadDoc('../assets/php/passLoginData.php', getLoginData)">
+<body>
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
@@ -256,21 +256,21 @@
     </script>
 	
 	<script type="text/javascript">
-		function loadDoc(url, cFunction) {
-			var xhttp;
-			xhttp=new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					cFunction(this);
-				}
-			};
-			xhttp.open("POST", url, true);
-			xhttp.send();
-		}
-		
-		function getLoginData(xhttp) {
-			console.log(JSON.parse(xhttp.responseText));
-		}
+		$(document).ready(function() {
+				
+				/* get some values from elements on the page: */
+				var xhr = $.ajax({
+					type: 'post',
+					url: '../assets/php/passLoginData.php',
+					//data: formData,
+					dataType: 'json',
+					encode: true
+				})
+			  
+				.done(function(data) {
+					console.log(data);
+				});
+		});
 	</script>
 </body>
 
