@@ -158,7 +158,7 @@
 				}
 			};
 			
-			console.log(document.getElementById("email").innerHTML);
+			console.log(document.getElementById("login-form").getElementById("email");
 			console.log(document.getElementById("password").innerHTML);
 			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
