@@ -41,6 +41,8 @@ else{
 
 sqlsrv_free_stmt($getResults);
 
+echo json_encode($usertype);
+/*
 switch($usertype){
 	case 0:{
 		header('Location: http://medaid.azurewebsites.net/');
@@ -59,5 +61,5 @@ switch($usertype){
 		break;
 	}
 }
-
+*/
 ?>

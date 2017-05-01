@@ -144,6 +144,37 @@
 
 		});
 	</script>
+	
+	<script type="text/javascript">
+		var xhttp = new XMLHttpRequest();
+		
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				switch(this.responseText){
+					case 0:{
+						alert("Wrong Login Credentials");
+						break;
+					}
+					case 1:{
+						header('Location: http://medaid.azurewebsites.net/');
+						break;
+					}
+					case 2:{
+						window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
+						break;
+					}
+					case 3:{
+						window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
+						break;
+					}
+				}
+			 console.log(this.responseText);
+			}
+		};
+		
+		xhttp.open("POST", "login.php", false);
+		xhttp.send();
+	</script>
 
 </body>
 
