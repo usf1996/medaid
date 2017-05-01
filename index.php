@@ -167,6 +167,8 @@
 				})
 			  
 				.done(function(data) {
+					
+							console.log(data);
 					switch(data['usertype']){
 						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
@@ -177,7 +179,6 @@
 							break;
 						}
 						case 2:{
-							console.log(data);
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}
