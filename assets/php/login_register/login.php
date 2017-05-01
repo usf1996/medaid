@@ -46,6 +46,6 @@ sqlsrv_free_stmt($getResults);
 
 //session_start();
 //$_SESSION['loginData'] = $data;
-echo $data;
+echo "<script>console.log(" . '$data' . ")</script>";
 
 ?>
