@@ -162,13 +162,11 @@
 					type: 'post',
 					url: 'assets/php/login_register/login.php',
 					data: formData,
-					//dataType: 'json',
-					//encode: true
+					dataType: 'json',
+					encode: true
 				})
 			  
 				.done(function(data) {
-					
-							console.log(data);
 					switch(data['usertype']){
 						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
