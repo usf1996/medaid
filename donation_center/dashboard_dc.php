@@ -269,8 +269,8 @@
 		}
 		
 		function getLoginData(xhttp) {
-			document.getElementById("dCenterName").innerHTML = xhttp.responseText['dcentername'];
-			document.getElementById("dCenterEmail").innerHTML = xhttp.responseText['email'];
+			document.getElementById("dCenterName") = xhttp.responseText['dcentername'];
+			document.getElementById("dCenterEmail")= xhttp.responseText['email'];
 		}
 	</script>
 </body>
