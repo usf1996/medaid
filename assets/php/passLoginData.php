@@ -73,7 +73,9 @@ switch($data['usertype']){
 		break;
 	}
 	default:{
+		$data['asd'] = "asd";
 		echo "<script>console.log('asd')</script>";
+		break;
 	}
 }
 
