@@ -31,12 +31,12 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" onsubmit="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)" method="post" role="form" style="display: block;">
+								<form id="login-form" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="email" name="email" id="emailLogin" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autofocus required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="passwordLogin" tabindex="2" class="form-control" placeholder="Password" required>
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -150,7 +150,22 @@
 	</button>
 	
 	<script type="text/javascript">
-		function ajaxResponse(url, cFunction){
+		$("#login-form").submit(function(event) {
+
+			/* stop form from submitting normally */
+			event.preventDefault();
+
+			/* get some values from elements on the page: */
+			$.ajax({
+            type: 'post',
+            url: 'assets\\php\\login_register\\login.php',
+            data: $('form').serialize(),
+            success: function () {
+              alert('form was submitted');
+            }
+          });
+		});
+		/*function ajaxResponse(url, cFunction){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
@@ -185,7 +200,7 @@
 				}
 			}
 		 console.log(xhttp.responseText);
-		}
+		}*/
 	</script>
 
 </body>
