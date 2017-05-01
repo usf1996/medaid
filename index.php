@@ -172,7 +172,7 @@
 			}
 		};
 		
-		xhttp.open("POST", "login.php", false);
+		xhttp.open("POST", "assets\php\login_register\login.php", true);
 		xhttp.send();
 	</script>
 
