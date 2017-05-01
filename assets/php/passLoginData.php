@@ -30,9 +30,6 @@ switch($usertype){
 				$data['email'] = $row['email'];
 			}
 		}
-
-		sqlsrv_free_stmt($getResults);
-		echo json_encode($data);
 		break;
 	}
 	case 2:{
@@ -54,9 +51,6 @@ switch($usertype){
 				$data['lat'] = $row['lat'];
 			}
 		}
-
-		sqlsrv_free_stmt($getResults);
-		echo json_encode($data);
 		break;
 	}
 	case 3:{
@@ -78,12 +72,11 @@ switch($usertype){
 				$data['lat'] = $row['lat'];
 			}
 		}
-
-		sqlsrv_free_stmt($getResults);
-		echo json_encode($data);
 		break;
 	}
 }
 
+sqlsrv_free_stmt($getResults);
+echo json_encode($data);
 
 ?>
