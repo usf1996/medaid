@@ -51,11 +51,11 @@ switch($usertype){
 		break;
 	}
 	case 2:{
-		header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.html');
+		header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
 		break;
 	}
 	case 3:{
-		header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.html');
+		header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
 		break;
 	}
 }
