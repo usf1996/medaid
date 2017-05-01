@@ -16,7 +16,7 @@
 <!--    Table JS-->
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	
-	<?php include '../assets/php/test.php'; ?>
+	<?php include '../assets/php/passLoginData.php'; ?>
 </head>
 
 <body>
