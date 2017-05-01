@@ -264,7 +264,7 @@
 				console.log(xhttp.responseText);
 			}
 		};
-		xhttp.open("POST", "passLoginData.php", true);
+		xhttp.open("POST", "/assets/php/login_register/login.php", true);
 		xhttp.send();
 	});
 	</script>
