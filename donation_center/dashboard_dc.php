@@ -260,7 +260,7 @@
 				
 				/* get some values from elements on the page: */
 				var xhr = $.ajax({
-					type: 'post',
+					//type: 'post',
 					url: '../assets/php/passLoginData.php',
 					//data: formData,
 					dataType: 'json',
