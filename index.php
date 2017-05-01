@@ -145,10 +145,6 @@
 		});
 	</script>
 	
-	<button type="button"
-		onclick="ajaxResponse('assets\\php\\login_register\\login.php', loadDoc)">Change Content
-	</button>
-	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#login-form").submit(function(event) {
@@ -189,11 +185,6 @@
 							break;
 						}
 					}
-					
-					// log data to the console so we can see
-					console.log(data); 
-
-					// here we will handle errors and validation messages
 				});
 			});
 		});
