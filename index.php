@@ -159,7 +159,7 @@
 			};
 			
 			console.log(document.getElementById("passwordLogin").innerHTML);
-			console.log(document.getElementById("password").innerHTML);
+			console.log(document.getElementById("emailLogin").innerHTML);
 			xhttp.open("POST", url, false);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("password=" + "dc1" + "&email=" + "dc1@dc.com");
