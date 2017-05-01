@@ -7,11 +7,11 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 $tsql= "SELECT * FROM (
-		SELECT userid, email, pass, usertype FROM citizen
+		SELECT userid AS id, email, pass, usertype FROM citizen
 		UNION
-		SELECT dcenterid, email, pass, usertype FROM donationcenter
+		SELECT dcenterid AS id, email, pass, usertype FROM donationcenter
 		UNION
-		SELECT redcrossid, email, pass, usertype FROM redcross) AS loginres WHERE email = '$email' AND pass = '$password'";
+		SELECT redcrossid AS id, email, pass, usertype FROM redcross) AS loginres WHERE email = '$email' AND pass = '$password'";
 $getResults= sqlsrv_query($conn, $tsql);
 
 if ($getResults == FALSE)
@@ -24,18 +24,18 @@ else{
 			switch($row['usertype']){
 				case "citizen":{
 					$data['usertype'] = 1;
-					$data['userid'] = $row['userid'];
+					$data['userid'] = $row['id'];
 					break;
 				}
 				case "donation center":{
 					$data['usertype'] = 2;
-					$data['dcenterid'] = $row['usertype'];
+					$data['dcenterid'] = $row['id'];
 					echo json_encode($data);
 					break;
 				}
 				case "red cross":{
 					$data['usertype'] = 3;
-					$data['redcrossid'] = $row['redcrossid'];
+					$data['redcrossid'] = $row['id'];
 					break;
 				}
 			}
@@ -45,8 +45,8 @@ else{
 
 sqlsrv_free_stmt($getResults);
 
-///session_start();
-//$_SESSION['loginData'] = $data;
+session_start();
+$_SESSION['loginData'] = $data;
 echo json_encode($data);
 
 ?>
