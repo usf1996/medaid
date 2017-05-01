@@ -256,21 +256,21 @@
     </script>
 	
 	<script type="text/javascript">
-		$(document).ready(function() {
-				console.log("asd");
-				/* get some values from elements on the page: */
-				var xhr = $.ajax({
-					type: 'post',
-					url: 'passLoginData.php',
-					data: {test: 'test'},
-					dataType: 'json',
-					encode: true
-				})
-			  
-				.done(function(data) {
-					console.log(data);
-				});
-		});
+		function loadDoc(url, cFunction) {
+			var xhttp;
+			xhttp=new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
+				}
+			};
+			xhttp.open("POST", url, true);
+			xhttp.send();
+		}
+		
+		function getLoginData(xhttp) {
+			console.log(xhttp.responseText);
+		}
 	</script>
 </body>
 
