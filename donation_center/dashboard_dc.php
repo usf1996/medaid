@@ -94,7 +94,7 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-info">
-                                <div id="dCenterName">Jonny <strong id="dCenterEmail">Deen</strong></div>
+                                <div id="dCenterName">Jonny</div>
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                                 </div>
@@ -269,8 +269,7 @@
 		}
 		
 		function getLoginData(xhttp) {
-			document.getElementById("dCenterName") = xhttp.responseText['dcentername'];
-			document.getElementById("dCenterEmail")= xhttp.responseText['email'];
+			$('#dCenterName').text(xhttp.responseText['dcentername']);
 		}
 	</script>
 </body>
