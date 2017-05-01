@@ -25,16 +25,25 @@ else{
 				case "citizen":{
 					$data['usertype'] = 1;
 					$data['userid'] = $row['id'];
+					
+					include 'passLoginData.php';
+					
 					break;
 				}
 				case "donation center":{
 					$data['usertype'] = 2;
 					$data['dcenterid'] = $row['id'];
+					
+					include 'passLoginData.php';
+					
 					break;
 				}
 				case "red cross":{
 					$data['usertype'] = 3;
 					$data['redcrossid'] = $row['id'];
+					
+					include 'passLoginData.php';
+					
 					break;
 				}
 			}
@@ -44,8 +53,6 @@ else{
 
 sqlsrv_free_stmt($getResults);
 
-session_start();
-$_SESSION['loginData'] = $data;
 echo json_encode($data);
 
 ?>

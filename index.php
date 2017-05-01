@@ -158,7 +158,7 @@
 				};
 				
 				/* get some values from elements on the page: */
-				$.ajax({
+				var xhr = $.ajax({
 					type: 'post',
 					url: 'assets/php/login_register/login.php',
 					data: formData,
