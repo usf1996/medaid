@@ -146,7 +146,7 @@
 	</script>
 	
 	<script type="text/javascript">
-		//$(document).ready(function() {
+		$(document).ready(function() {
 			$("#login-form").submit(function(event) {
 
 				/* stop form from submitting normally */
@@ -177,7 +177,7 @@
 							break;
 						}
 						case 2:{
-							xhr.abort();
+							console.log(data);
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}
@@ -188,7 +188,7 @@
 					}
 				});
 			});
-		//});
+		});
 	</script>
 
 </body>
