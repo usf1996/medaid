@@ -18,7 +18,7 @@
 	
 </head>
 
-<body>
+<body onload="loadDoc('../assets/php/passLoginData.php', getLoginData)">
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
@@ -256,7 +256,7 @@
     </script>
 	
 	<script type="text/javascript">
-	/*	function loadDoc(url, cFunction) {
+		function loadDoc(url, cFunction) {
 			var xhttp;
 			xhttp=new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
@@ -270,7 +270,7 @@
 		
 		function getLoginData(xhttp) {
 			console.log(xhttp.responseText);
-		}*/
+		}
 	</script>
 </body>
 
