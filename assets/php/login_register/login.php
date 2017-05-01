@@ -21,6 +21,7 @@ else{
 		$data['usertype'] = 0;
 	}else{
 		while ($row = sqlsrv_fetch_array($getResults)) {
+					$data['dcenterid'] = $row['dcenterid'];
 			switch($row['usertype']){
 				case "citizen":{
 					$data['usertype'] = 1;
