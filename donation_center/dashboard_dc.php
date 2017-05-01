@@ -269,7 +269,7 @@
 		}
 		
 		function getLoginData(xhttp) {
-			console.log(xhttp.responseText['dcentername']);
+			console.log(xhttp.responseText.dcentername);
 		}
 	</script>
 </body>
