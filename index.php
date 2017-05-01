@@ -157,21 +157,39 @@
 				event.preventDefault();
 
 				var formData = {
-					'email'             : $('input[name=email]').val(),
-					'password'    : $('input[name=password]').val()
+					'email': $('input[name=email]').val(),
+					'password': $('input[name=password]').val()
 				};
 				
 				/* get some values from elements on the page: */
 				$.ajax({
-				type: 'post',
-				url: 'assets\\php\\login_register\\login.php',
-				data: formData,
-				dataType: 'json',
-				encode: true
-			  })
+					type: 'post',
+					url: 'assets\\php\\login_register\\login.php',
+					data: formData,
+					dataType: 'json',
+					encode: true
+				})
 			  
-			  .done(function(data) {
-
+				.done(function(data) {
+					switch(data['usertype']){
+						case 0:{
+							alert("Wrong Login Credentials, Please Try Again");
+							break;
+						}
+						case 1:{
+							header('Location: http://medaid.azurewebsites.net/');
+							break;
+						}
+						case 2:{
+							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
+							break;
+						}
+						case 3:{
+							window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
+							break;
+						}
+					}
+					
 					// log data to the console so we can see
 					console.log(data); 
 
@@ -179,43 +197,6 @@
 				});
 			});
 		});
-		
-		/*function ajaxResponse(url, cFunction){
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					cFunction(this);
-				}
-			};
-			
-			console.log(document.getElementById("passwordLogin").innerHTML);
-			console.log(document.getElementById("emailLogin").innerHTML);
-			xhttp.open("POST", url, false);
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("password=" + document.getElementById("passwordLogin").innerHTML + "&email=" + document.getElementById("emailLogin").innerHTML);
-		}
-		
-		function loadDoc(xhttp){
-			switch(xhttp.responseText){
-				case '0':{
-					alert("Wrong Login Credentials, Please Try Again");
-					break;
-				}
-				case '1':{
-					header('Location: http://medaid.azurewebsites.net/');
-					break;
-				}
-				case '2':{
-					window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
-					break;
-				}
-				case '3':{
-					window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
-					break;
-				}
-			}
-		 console.log(xhttp.responseText);
-		}*/
 	</script>
 
 </body>

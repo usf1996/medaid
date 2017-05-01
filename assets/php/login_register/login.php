@@ -1,6 +1,8 @@
 <?php
 include 'connect.php';
 
+$data = array();
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -16,21 +18,21 @@ if ($getResults == FALSE)
     echo (sqlsrv_errors());
 else{
 	if(!sqlsrv_has_rows($getResults)){
-		$usertype = 0;
+		$data['usertype'] = 0;
 	}else{
 		while ($row = sqlsrv_fetch_array($getResults)) {
 			if($email == $row['email'] && $password == $row['pass']){
 				switch($row['usertype']){
 					case "citizen":{
-						$usertype = 1;
+						$data['usertype'] = 1;
 						break;
 					}
 					case "donation center":{
-						$usertype = 2;
+						$data['usertype'] = 2;
 						break;
 					}
 					case "red cross":{
-						$usertype = 3;
+						$data['usertype'] = 3;
 						break;
 					}
 				}
@@ -41,25 +43,6 @@ else{
 
 sqlsrv_free_stmt($getResults);
 
-echo json_encode($usertype);
-/*
-switch($usertype){
-	case 0:{
-		header('Location: http://medaid.azurewebsites.net/');
-		break;
-	}
-	case 1:{
-		header('Location: http://medaid.azurewebsites.net/');
-		break;
-	}
-	case 2:{
-		header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
-		break;
-	}
-	case 3:{
-		header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
-		break;
-	}
-}
-*/
+echo json_encode($data);
+
 ?>
