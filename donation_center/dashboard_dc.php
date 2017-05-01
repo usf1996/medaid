@@ -18,7 +18,7 @@
 	
 </head>
 
-<body onload="loadDoc('../assets/php/passLoginData.php', getLoginData)">
+<body>
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
