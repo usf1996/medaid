@@ -21,23 +21,21 @@ else{
 		$data['usertype'] = 0;
 	}else{
 		while ($row = sqlsrv_fetch_array($getResults)) {
-			if($email == $row['email'] && $password == $row['pass']){
-				switch($row['usertype']){
-					case "citizen":{
-						$data['usertype'] = 1;
-						$data['userid'] = $row['userid'];
-						break;
-					}
-					case "donation center":{
-						$data['usertype'] = 2;
-						$data['dcenterid'] = $row['dcenterid'];
-						break;
-					}
-					case "red cross":{
-						$data['usertype'] = 3;
-						$data['redcrossid'] = $row['redcrossid'];
-						break;
-					}
+			switch($row['usertype']){
+				case "citizen":{
+					$data['usertype'] = 1;
+					$data['userid'] = $row['userid'];
+					break;
+				}
+				case "donation center":{
+					$data['usertype'] = 2;
+					$data['dcenterid'] = $row['dcenterid'];
+					break;
+				}
+				case "red cross":{
+					$data['usertype'] = 3;
+					$data['redcrossid'] = $row['redcrossid'];
+					break;
 				}
 			}
 		}
