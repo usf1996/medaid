@@ -162,8 +162,8 @@
 					type: 'post',
 					url: 'assets/php/login_register/login.php',
 					data: formData,
-					dataType: 'json',
-					encode: true
+					//dataType: 'json',
+					//encode: true
 				})
 			  
 				.done(function(data) {
