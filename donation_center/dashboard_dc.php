@@ -260,9 +260,9 @@
 				console.log("asd");
 				/* get some values from elements on the page: */
 				var xhr = $.ajax({
-					//type: 'post',
-					url: '/assets/php/passLoginData.php',
-					//data: formData,
+					type: 'post',
+					url: 'passLoginData.php',
+					data: {test: 'test'},
 					dataType: 'json',
 					encode: true
 				})
