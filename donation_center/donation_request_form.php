@@ -43,7 +43,7 @@
           <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a> </li>
           <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a> </li>
           <li class="divider"></li>
-          <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a> </li>
+          <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a> </li>
         </ul>
         <!-- end dropdown-user -->
       </li>
@@ -116,31 +116,17 @@
                     <div class="col-lg-6">
                       <form role="form">
 						<div class="form-group">
-                    	<label>Blood Type Needed:</label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>
-                            A+ </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">
-                            A- </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">
-                            B+ </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline4" value="option4">
-                            B- </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline5" value="option5">
-                            O+ </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline6" value="option6">
-                            O- </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline7" value="option7">
-                            AB+ </label>
-                          <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline8" value="option8">
-                            AB- </label>
+                          <label>Blood Type Needed:</label>
+                          <select name="select" class="form-control">
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                          </select>
                         </div>
                         <div class="form-group">
                           <label>Hospital:</label>

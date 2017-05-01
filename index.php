@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Med Aid</title>
     <!-- Core CSS - Include with every page -->
@@ -123,6 +123,7 @@
      <!-- Core Scripts - Include with every page -->
     <script src="assets/plugins/jquery-1.10.2.js"></script>
     <script src="assets/plugins/bootstrap/bootstrap.js"></script>
+	
 	<script type="text/javascript">
 		$(function() {
 
