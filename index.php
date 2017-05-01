@@ -158,7 +158,7 @@
 				};
 				
 				/* get some values from elements on the page: */
-				$.ajax({
+				var xhr = $.ajax({
 					type: 'post',
 					url: 'assets/php/login_register/login.php',
 					data: formData,
@@ -177,6 +177,7 @@
 							break;
 						}
 						case 2:{
+							xhr.abort();
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}
