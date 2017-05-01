@@ -177,7 +177,7 @@
 							break;
 						}
 						case 2:{
-							console.log(data);
+							console.log(data + "123");
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}
