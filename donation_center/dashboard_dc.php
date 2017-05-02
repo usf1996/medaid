@@ -268,7 +268,7 @@
 			var data = [];
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
-				data.push([dataSet.drivedata.drivename, dataSet.drivedata.driveloc, dataSet.drivedata.sdate, dataSet.drivedata.edate]);
+				data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
 			}
 			
 			$('#dataTables-blooddrive').DataTable( {
