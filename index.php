@@ -165,14 +165,13 @@
 					dataType: 'json',
 					encode: true,
 					error: function(xhr, status, error) {
-							  var err = eval("(" + xhr.responseText + ")");
-							  alert(err.Message);
+							  alert(xhr.responseText);
 							}
 				})
 			  
-				.done(function(data) {
+				/*.done(function(data) {
 					console.log("jh");
-					/*switch(data['usertype']){
+					switch(data['usertype']){
 						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
 							break;
@@ -190,8 +189,8 @@
 							window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
 							break;
 						}
-					}*/
-				});
+					}
+				});*/
 			});
 		});
 	</script>
