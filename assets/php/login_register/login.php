@@ -43,9 +43,6 @@ else{
 }
 
 sqlsrv_free_stmt($getResults);
-
-//session_start();
-//$_SESSION['loginData'] = $data;
 echo json_encode($data);
 
 ?>

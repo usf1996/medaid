@@ -3,9 +3,6 @@ include 'connect.php';
 
 $data = array();
 
-//session_start();
-//$data = $_SESSION['loginData'];
-
 $usertype = $_POST['usertype'];
 
 switch($usertype){
@@ -73,6 +70,9 @@ switch($usertype){
 			}
 		}
 		break;
+	}
+	default:{
+		$data['status'] = $usertype;
 	}
 }
 
