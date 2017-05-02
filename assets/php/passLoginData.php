@@ -31,7 +31,7 @@ switch($usertype){
 	}
 	case 2:{
 		$id = $_POST['dcenterid'];
-		$tsql= "SELECT * FROM donationcenter WHERE dcenterid = '$id'";
+		$tsql= "SELECT * FROM donationcenter WHERE dcenterid = 1";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
