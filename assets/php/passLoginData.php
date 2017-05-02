@@ -3,9 +3,7 @@ include 'connect.php';
 
 $data = array();
 
-$usertype = $_POST['usertype'];
-
-switch($usertype){
+switch($_POST['usertype'];){
 	case 1:{
 		$id = $_POST['userid'];
 		$tsql= "SELECT * FROM citizen WHERE userid = '$id'";
@@ -70,6 +68,9 @@ switch($usertype){
 			}
 		}
 		break;
+	}
+	default:{
+		$data['asd'] = "asd";
 	}
 }
 
