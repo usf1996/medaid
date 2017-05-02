@@ -238,12 +238,6 @@
 <!--    Table JS-->
 	<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#dataTables-bloodtype').dataTable();
-            //$('#dataTables-blooddrive').dataTable();
-        });
-    </script>
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -264,33 +258,25 @@
 		})
 	  
 		.done(function(dataSet) {
-			console.log(dataSet.drivedata);
-			var data = [];
+			var d_data = [];
+			var r_data = [];
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
-				data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
+				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
+			}
+			
+			for(i = 0; i < dataSet.reqdata.length; i++){
+				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital);
 			}
 			
 			$('#dataTables-blooddrive').DataTable( {
-				data: data
-				/*columns:[
-					{"drivedata" : "drivename"},
-					{"drivedata" : "driveloc"},
-					{"drivedata" : "sdate"},
-					{"drivedata" : "edate"}
-				]*/
+				data: d_data
 			});
 			
-			/*for(i = 0; i < data.length; i++){
-				toadd +="<tr>" +
-						"<td>" + data[i].drivename + "</td>" +
-						"<td>" + data[i].driveloc + "</td>" +
-						"<td>" + data[i].sdate + "</td>" +
-						"<td>" + data[i].edate + "</td>" +
-						"</tr>";
-				console.log(toadd);
-			}
-			$("#dataTables-blooddrive-body").html(toadd);*/
+			$('#dataTables-bloodtype').dataTable( {
+				data: r_data
+			});
+			
 		});
 	});
 	</script>
