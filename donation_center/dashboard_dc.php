@@ -266,7 +266,7 @@
 	  
 		.done(function(data) {
 			var toadd;
-			for(i = 0; i < data.legth; i++){
+			for(i = 0; i < data.length; i++){
 				toadd +="<tr>" +
 						"<td>" + data[i][0] + "</td>" +
 						"<td>" + data[i][1] + "</td>" +
