@@ -270,15 +270,15 @@
 		})
 	  
 		.done(function(data) {
-			$('#dataTables-blooddrive').DataTable( {
-				data: data
+			$('#dataTables-blooddrive').DataTable({
+				data: data,
 				columns: [ 
 					{ title: "drivename"},
 					{ title: "driveloc"},
 					{ title: "sdate"},
 					{ title: "edate"},
 				]
-			} );
+			});
 		});
 	});
 	</script>
