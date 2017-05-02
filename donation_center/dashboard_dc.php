@@ -147,7 +147,7 @@
 									  <div class="panel-heading">Blood Donation Requests</div>
 									  <div class="panel-body">
 										<div class="table-responsive">
-										  <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+										  <table class="table table-striped table-bordered table-hover" id="dataTables-bloodtype">
 											<thead>
 													<tr>
 													  <th>Blood Type</th>
@@ -182,7 +182,7 @@
 							  <div class="panel-heading">Blood Drive Events</div>
 							  <div class="panel-body">
 								<div class="table-responsive">
-								  <table class="table table-striped table-bordered table-hover" id="dataTables-example2">
+								  <table class="table table-striped table-bordered table-hover" id="dataTables-blooddrive">
 									<thead>
 										<tr>
 										  <th>Event Name</th>
@@ -246,7 +246,11 @@
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script>
         $(document).ready(function () {
-            $('#dataTables-example').dataTable();
+            $('#dataTables-bloodtype').dataTable();
+            $('#dataTables-blooddrive').dataTable();
+			
+			
+			
         });
     </script>
 	
@@ -254,8 +258,8 @@
 	$(document).ready(function() {
 		var obj = JSON.parse(localStorage.getItem("loginData"));
 		
-		document.getElementById('dCenterName').innerHTML = obj.dcentername;
-		document.getElementById('dCenterEmail').innerHTML = obj.email;
+		$("#dCenterName").text(obj.dcentername);
+		$("#dCenterEmail").text(obj.email);
 		
 		$.ajax({
 			type: 'post',

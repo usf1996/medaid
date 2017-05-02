@@ -32,7 +32,7 @@ switch($usertype){
 	}
 	case 2:{
 		$id = $_POST['dcenterid'];
-		$tsql= "SELECT blooddrive.drivename, blooddrive.driveloc, blooddrive.sdate, blooddrive.edate
+		$tsql= "SELECT blooddrive.drivename, blooddrive.driveloc, CONVERT(VARCHAR(11), blooddrive.sdate, 106), CONVERT(VARCHAR(11), blooddrive.edate, 106)
 				FROM donationcenter join blooddrive 
 				ON blooddrive.dcenterid = donationcenter.dcenterid 
 					AND blooddrive.dcenterid = '$id'
