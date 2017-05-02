@@ -154,20 +154,6 @@
 													  <th>Hospital</th>
 													</tr>
 											</thead>
-											<tbody>
-													<tr>
-													  <td>O+</td>
-													  <td>Saint George</td>
-													</tr>
-													<tr>
-													  <td>AB+</td>
-													  <td>Hotel Dieu</td>
-													</tr>
-													<tr>
-													  <td>A-</td>
-													  <td>Sacre Coeur</td>
-													</tr>
-											</tbody>
 										  </table>
 										</div>
 									  </div>
@@ -191,14 +177,6 @@
 										  <th>End Date</th>
 										</tr>
 									</thead>
-									<tbody id="dataTables-blooddrive-body">
-										<tr>
-										  <td>AUB Blood Drive</td>
-										  <td>AUB</td>
-										  <td>09-April-2017</td>
-										  <td>12-April-2017</td>
-										</tr>
-									</tbody>
 								  </table>
 								</div>
 							  </div>
@@ -273,7 +251,7 @@
 				data: d_data
 			});
 			
-			$('#dataTables-bloodtype').dataTable( {
+			$('#dataTables-bloodtype').DataTable( {
 				data: r_data
 			});
 			
