@@ -3,14 +3,14 @@ include 'connect.php';
 
 $data = array();
 
-session_start();
-$data = $_SESSION['loginData'];
+//session_start();
+//$data = $_SESSION['loginData'];
 
-$usertype = $data['usertype'];
+$usertype = $_POST['usertype'];
 
 switch($usertype){
 	case 1:{
-		$id = $data['userid'];
+		$id = $_POST['userid'];
 		$tsql= "SELECT * FROM citizen WHERE userid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
@@ -33,7 +33,7 @@ switch($usertype){
 		break;
 	}
 	case 2:{
-		$id = $data['dcenterid'];
+		$id = $_POST['dcenterid'];
 		$tsql= "SELECT * FROM citizen WHERE dcenterid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
@@ -54,7 +54,7 @@ switch($usertype){
 		break;
 	}
 	case 3:{
-		$id = $data['redcrossid'];
+		$id = $_POST['redcrossid'];
 		$tsql= "SELECT * FROM citizen WHERE redcrossid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);

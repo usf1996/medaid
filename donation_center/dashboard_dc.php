@@ -257,9 +257,20 @@
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
-		console.log("dashboard");
-		var obj = localStorage.getItem("loginData");
-		console.log(JSON.parse(obj));
+		var obj = JSON.parse(localStorage.getItem("loginData"));
+		
+		$.ajax({
+			type: 'post',
+			url: '/assets/php/passLoginData.php',
+			data: obj,
+			dataType: 'json',
+			encode: true
+		})
+	  
+		.done(function(data) {
+			console.log(data);
+		});
+		
 		/*var xhttp;
 		xhttp=new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
