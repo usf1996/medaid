@@ -166,7 +166,7 @@
 					encode: true
 				})
 			  
-				.done(function(data) {
+				/*.done(function(data) {
 					switch(data['usertype']){
 						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
@@ -177,7 +177,7 @@
 							break;
 						}
 						case 2:{
-							localStorage.setItem("loginData", JSON.stringify(data));
+							//localStorage.setItem("loginData", JSON.stringify(data));
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}
@@ -186,7 +186,7 @@
 							break;
 						}
 					}
-				});
+				});*/
 			});
 		});
 	</script>

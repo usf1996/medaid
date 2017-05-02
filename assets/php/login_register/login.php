@@ -14,9 +14,10 @@ $tsql= "SELECT * FROM (
 		SELECT redcrossid AS id, redcrossname AS label, email, pass, usertype FROM redcross) AS loginres WHERE email = '$email' AND pass = '$password'";
 $getResults= sqlsrv_query($conn, $tsql);
 
-if ($getResults == FALSE)
+if ($getResults == FALSE){}
     echo (sqlsrv_errors());
-else{
+	$data['status'] = "Query Error!";
+}else{
 	if(!sqlsrv_has_rows($getResults)){
 		$data['usertype'] = 0;
 	}else{
@@ -49,6 +50,29 @@ else{
 }
 
 sqlsrv_free_stmt($getResults);
+
+switch($data['usertype']){
+	case 0:{
+		$data['status'] = "Wrong Login Credentials, Please Try Again";
+		echo json_encode($data);
+		break;
+	}
+	case 1:{
+		session_start();
+		header('Location: http://medaid.azurewebsites.net/');
+		break;
+	}
+	case 2:{
+		session_start();
+		header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
+		break;
+	}
+	case 3:{
+		session_start();
+		header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
+		break;
+	}
+}
 echo json_encode($data);
 
 ?>
