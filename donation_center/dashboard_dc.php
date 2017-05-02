@@ -258,7 +258,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		console.log("dashboard");
-		console.log(localStorage.getItem("loginData"));
+		console.log(JSON.parse(localStorage.getItem("loginData")));
 		/*var xhttp;
 		xhttp=new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
