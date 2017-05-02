@@ -273,10 +273,10 @@
 			$('#dataTables-blooddrive').DataTable( {
 				data: data
 				columns: [ 
-					{"drivename"},
-					{"driveloc"},
-					{"sdate"},
-					{"edate"},
+					{ title: "drivename"},
+					{ title: "driveloc"},
+					{ title: "sdate"},
+					{ title: "edate"},
 				]
 			} );
 		});
