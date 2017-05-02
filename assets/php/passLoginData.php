@@ -71,13 +71,9 @@ switch($usertype){
 		}
 		break;
 	}
-	default:{
-		$data['status'] = $usertype;
-	}
 }
 
-$data['status'] = $usertype;
 sqlsrv_free_stmt($getResults);
-echo json_encode($data);
+echo json_encode($usertype);
 
 ?>
