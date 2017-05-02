@@ -94,9 +94,10 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-info">
-                                <span id="dCenterName">Jonny</span>
+                                <span id="dCenterName">Name</span>
                                 <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>
+									<span id="dCenterEmail">&nbsp;Email<span>
                                 </div>
                             </div>
                         </div>
@@ -272,6 +273,7 @@
 	  
 		.done(function(data) {
 			document.getElementById('dCenterName').innerHTML = data.dcentername;
+			document.getElementById('dCenterEmail').innerHTML = data.email + "&nbsp;";
 		});
 	});
 	</script>
