@@ -75,6 +75,6 @@ switch($usertype){
 
 
 sqlsrv_free_stmt($getResults);
-echo json_encode($id);
+echo json_encode($data);
 
 ?>

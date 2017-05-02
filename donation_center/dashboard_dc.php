@@ -263,8 +263,8 @@
 			type: 'post',
 			url: '/assets/php/passLoginData.php',
 			data: obj,
-			//dataType: 'json',
-			//encode: true,
+			dataType: 'json',
+			encode: true,
 			error: function(xhr){
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
 			}
@@ -273,16 +273,6 @@
 		.done(function(data) {
 			console.log(data);
 		});
-		
-		/*var xhttp;
-		xhttp=new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				console.log(xhttp.responseText);
-			}
-		};
-		xhttp.open("POST", "/assets/php/login_register/login.php", true);
-		xhttp.send();*/
 	});
 	</script>
 </body>
