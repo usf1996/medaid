@@ -166,8 +166,9 @@
 					encode: true
 				})
 			  
-				/*.done(function(data) {
-					switch(data['usertype']){
+				.done(function(data) {
+					console.log("jh");
+					/*switch(data['usertype']){
 						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
 							break;
@@ -185,8 +186,8 @@
 							window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
 							break;
 						}
-					}
-				});*/
+					}*/
+				});
 			});
 		});
 	</script>
