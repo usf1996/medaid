@@ -263,8 +263,8 @@
 			type: 'post',
 			url: '/assets/php/passLoginData.php',
 			data: obj,
-			dataType: 'json',
-			encode: true,
+			//dataType: 'json',
+			//encode: true,
 			error: function(xhr){
 				alert("An error occured: " + xhr.status + " " + xhr.statusText);
 			}
