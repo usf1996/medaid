@@ -163,7 +163,11 @@
 					url: 'assets/php/login_register/login.php',
 					data: formData,
 					dataType: 'json',
-					encode: true
+					encode: true,
+					error: function(xhr, status, error) {
+							  var err = eval("(" + xhr.responseText + ")");
+							  alert(err.Message);
+							}
 				})
 			  
 				.done(function(data) {
