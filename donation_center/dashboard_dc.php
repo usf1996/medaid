@@ -273,7 +273,7 @@
 	  
 		.done(function(data) {
 			document.getElementById('dCenterName').innerHTML = data.dcentername;
-			document.getElementById('dCenterEmail').innerHTML = data.email + "&nbsp;";
+			document.getElementById('dCenterEmail').innerHTML = data.email;
 		});
 	});
 	</script>
