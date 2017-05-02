@@ -266,16 +266,19 @@
 		.done(function(dataSet) {
 			console.log(dataSet.drivedata);
 			var data = [];
-			data.push(dataSet.drivedata);
+			
+			for(i = 0; i < dataSet.drivedata.length; i++){
+				data.push([dataSet.drivedata.drivename, dataSet.drivedata.driveloc, dataSet.drivedata.sdate, dataSet.drivedata.edate]);
+			}
 			
 			$('#dataTables-blooddrive').DataTable( {
-				data: dataSet,
-				columns:[
+				data: data
+				/*columns:[
 					{"drivedata" : "drivename"},
 					{"drivedata" : "driveloc"},
 					{"drivedata" : "sdate"},
 					{"drivedata" : "edate"}
-				]
+				]*/
 			});
 			
 			/*for(i = 0; i < data.length; i++){
