@@ -3,10 +3,12 @@ include 'connect.php';
 
 $data = array();
 
-//session_start();
-//$data = $_SESSION['loginData'];
+session_start();
+$data = $_SESSION['loginData'];
 
-switch($data['usertype']){
+$usertype = $data['usertype'];
+
+switch($usertype){
 	case 1:{
 		$id = $data['userid'];
 		$tsql= "SELECT * FROM citizen WHERE userid = '$id'";
@@ -72,12 +74,9 @@ switch($data['usertype']){
 		}
 		break;
 	}
-	default:{
-		$data['asd'] = "asd";
-		break;
-	}
 }
 
 sqlsrv_free_stmt($getResults);
+echo json_encode($data);
 
 ?>
