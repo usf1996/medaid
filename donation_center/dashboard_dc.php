@@ -254,8 +254,8 @@
 	$(document).ready(function() {
 		var obj = JSON.parse(localStorage.getItem("loginData"));
 		
-		document.getElementById('dCenterName').innerHTML = data.dcentername;
-		document.getElementById('dCenterEmail').innerHTML = data.email;
+		document.getElementById('dCenterName').innerHTML = obj.dcentername;
+		document.getElementById('dCenterEmail').innerHTML = obj.email;
 		
 		$.ajax({
 			type: 'post',

@@ -9,9 +9,9 @@ $password = $_POST['password'];
 $tsql= "SELECT * FROM (
 		SELECT userid AS id, email, pass, usertype FROM citizen
 		UNION
-		SELECT dcenterid AS id, email, pass, usertype FROM donationcenter
+		SELECT dcenterid AS id, dcentername, email, pass, usertype FROM donationcenter
 		UNION
-		SELECT redcrossid AS id, email, pass, usertype FROM redcross) AS loginres WHERE email = '$email' AND pass = '$password'";
+		SELECT redcrossid AS id, redcrossname, email, pass, usertype FROM redcross) AS loginres WHERE email = '$email' AND pass = '$password'";
 $getResults= sqlsrv_query($conn, $tsql);
 
 if ($getResults == FALSE)
