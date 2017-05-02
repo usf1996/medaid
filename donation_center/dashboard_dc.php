@@ -248,9 +248,6 @@
         $(document).ready(function () {
             $('#dataTables-bloodtype').dataTable();
             $('#dataTables-blooddrive').dataTable();
-			
-			
-			
         });
     </script>
 	
@@ -273,7 +270,15 @@
 		})
 	  
 		.done(function(data) {
-			console.log(data);
+			$('#dataTables-blooddrive').DataTable( {
+				data: data
+				columns: [ 
+					{"drivename"},
+					{"driveloc"},
+					{"sdate"},
+					{"edate"},
+				]
+			} );
 		});
 	});
 	</script>
