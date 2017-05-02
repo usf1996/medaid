@@ -266,15 +266,14 @@
 	  
 		.done(function(data) {
 			var toadd;
-			console.log(data.length);
 			for(i = 0; i < data.legth; i++){
-				toadd +="<tr>"+
+				toadd +="<tr>" +
 						"<td>" + data[i][0] + "</td>" +
 						"<td>" + data[i][1] + "</td>" +
 						"<td>" + data[i][2] + "</td>" +
 						"<td>" + data[i][3] + "</td>" +
 						"</tr>";
-			console.log(toadd);
+				console.log(toadd + 321);
 			}
 			$("#dataTables-blooddrive-body").html(toadd);
 		});
