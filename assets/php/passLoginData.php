@@ -8,7 +8,7 @@ $usertype = $_POST['usertype'];
 switch($usertype){
 	case 1:{
 		$id = $_POST['userid'];
-		$tsql= "SELECT * FROM citizen WHERE userid = 1";
+		$tsql= "SELECT * FROM citizen WHERE userid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
@@ -31,7 +31,7 @@ switch($usertype){
 	}
 	case 2:{
 		$id = $_POST['dcenterid'];
-		$tsql= "SELECT * FROM donationcenter WHERE dcenterid = 1";
+		$tsql= "SELECT * FROM donationcenter WHERE dcenterid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
@@ -52,7 +52,7 @@ switch($usertype){
 	}
 	case 3:{
 		$id = $_POST['redcrossid'];
-		$tsql= "SELECT * FROM redcross WHERE redcrossid = 1";
+		$tsql= "SELECT * FROM redcross WHERE redcrossid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
