@@ -3,10 +3,12 @@ include 'connect.php';
 
 $data = array();
 
-switch($_POST['usertype'];){
+$usertype = $_POST['usertype'];
+
+switch($usertype){
 	case 1:{
 		$id = $_POST['userid'];
-		$tsql= "SELECT * FROM citizen WHERE userid = '$id'";
+		$tsql= "SELECT * FROM citizen WHERE userid = 1";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
@@ -50,7 +52,7 @@ switch($_POST['usertype'];){
 	}
 	case 3:{
 		$id = $_POST['redcrossid'];
-		$tsql= "SELECT * FROM redcross WHERE redcrossid = '$id'";
+		$tsql= "SELECT * FROM redcross WHERE redcrossid = 1";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
