@@ -264,7 +264,9 @@
 		})
 	  
 		.done(function(dataSet) {
-			console.log(dataSet)
+			console.log(dataSet.drivedata);
+			var data = [];
+			data.push(dataSet.drivedata);
 			
 			$('#dataTables-blooddrive').DataTable( {
 				data: dataSet,
