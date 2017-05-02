@@ -257,7 +257,9 @@
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
-		var xhttp;
+		console.log("dashboard");
+		console.log(localStorage.getItem("loginData"));
+		/*var xhttp;
 		xhttp=new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -265,7 +267,7 @@
 			}
 		};
 		xhttp.open("POST", "/assets/php/login_register/login.php", true);
-		xhttp.send();
+		xhttp.send();*/
 	});
 	</script>
 </body>
