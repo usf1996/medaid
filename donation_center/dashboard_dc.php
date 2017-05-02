@@ -192,7 +192,6 @@
 										</tr>
 									</thead>
 									<tbody id="dataTables-blooddrive-body">
-										
 										<tr>
 										  <td>AUB Blood Drive</td>
 										  <td>AUB</td>
@@ -255,7 +254,7 @@
 		
 		$.ajax({
 			type: 'post',
-			url: '/assets/php/passLoginData.php',
+			url: '/assets/php/dashboard_dc.php',
 			data: obj,
 			dataType: 'json',
 			encode: true,
@@ -265,9 +264,19 @@
 		})
 	  
 		.done(function(data) {
-			var toadd;
 			console.log(data)
-			for(i = 0; i < data.length; i++){
+			
+			$('#dataTables-blooddrive').DataTable( {
+				data: data,
+				columns:[
+					{"drivedata" : "drivename"},
+					{"drivedata" : "driveloc"},
+					{"drivedata" : "sdate"},
+					{"drivedata" : "edate"}
+				]
+			}
+			
+			/*for(i = 0; i < data.length; i++){
 				toadd +="<tr>" +
 						"<td>" + data[i].drivename + "</td>" +
 						"<td>" + data[i].driveloc + "</td>" +
@@ -276,7 +285,7 @@
 						"</tr>";
 				console.log(toadd);
 			}
-			$("#dataTables-blooddrive-body").html(toadd);
+			$("#dataTables-blooddrive-body").html(toadd);*/
 		});
 	});
 	</script>
