@@ -272,7 +272,8 @@
 						"<td>" + data[i][1] + "</td>" +
 						"<td>" + data[i][2] + "</td>" +
 						"<td>" + data[i][3] + "</td>" +
-						"</tr>");
+						"</tr>";
+			console.log(toadd);
 			}
 			$("#dataTables-blooddrive-body').html(toadd);
 		});
