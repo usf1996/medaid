@@ -259,7 +259,7 @@
 	$(document).ready(function() {
 		console.log("dashboard");
 		var obj = localStorage.getItem("loginData");
-		console.log(obj);
+		console.log(JSON.parse(obj));
 		/*var xhttp;
 		xhttp=new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
