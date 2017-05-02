@@ -266,6 +266,7 @@
 	  
 		.done(function(data) {
 			var toadd;
+			console.log(data)
 			for(i = 0; i < data.length; i++){
 				toadd +="<tr>" +
 						"<td>" + data[i][0] + "</td>" +
@@ -273,7 +274,7 @@
 						"<td>" + data[i][2] + "</td>" +
 						"<td>" + data[i][3] + "</td>" +
 						"</tr>";
-				console.log(toadd + 321);
+				console.log(toadd);
 			}
 			$("#dataTables-blooddrive-body").html(toadd);
 		});
