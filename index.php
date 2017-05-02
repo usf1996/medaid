@@ -178,7 +178,7 @@
 						}
 						case 2:{
 							console.log(data);
-							localStorage.setItem("loginData",data);
+							localStorage.setItem("loginData", JSON.stringify(data));
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}
