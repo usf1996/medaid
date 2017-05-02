@@ -30,11 +30,15 @@ else{
 				case "donation center":{
 					$data['usertype'] = 2;
 					$data['dcenterid'] = $row['id'];
+					$data['dcentername'] = $row['dcentername'];
+					$data['email'] = $row['email'];
 					break;
 				}
 				case "red cross":{
 					$data['usertype'] = 3;
 					$data['redcrossid'] = $row['id'];
+					$data['redcrossname'] = $row['redcrossname'];
+					$data['email'] = $row['email'];
 					break;
 				}
 			}

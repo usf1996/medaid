@@ -31,7 +31,11 @@ switch($usertype){
 	}
 	case 2:{
 		$id = $_POST['dcenterid'];
-		$tsql= "SELECT * FROM donationcenter WHERE dcenterid = '$id'";
+		$tsql= "SELECT blooddrive.drivename, blooddrive.driveloc, blooddrive.sdate, blooddrive.edate
+				FROM donationcenter join blooddrive 
+				ON blooddrive.dcenterid = donationcenter.dcenterid 
+					AND blooddrive.dcenterid = '$id'
+					AND donationcenter.dcenterid = '$id'";
 		
 		$getResults= sqlsrv_query($conn, $tsql);
 
@@ -39,13 +43,10 @@ switch($usertype){
 			echo (sqlsrv_errors());
 		else{
 			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-				$data['dcenterid'] = $row['dcenterid'];
-				$data['dcentername'] = $row['dcentername'];
-				$data['email'] = $row['email'];
-				$data['addr'] = $row['addr'];
-				$data['phonenum'] = $row['phonenum'];
-				$data['long'] = $row['long'];
-				$data['lat'] = $row['lat'];
+				$data['drivename'] = $row['drivename'];
+				$data['driveloc'] = $row['driveloc'];
+				$data['sdate'] = $row['sdate'];
+				$data['edate'] = $row['edate'];
 			}
 		}
 		break;
@@ -72,7 +73,6 @@ switch($usertype){
 		break;
 	}
 }
-
 
 sqlsrv_free_stmt($getResults);
 echo json_encode($data);

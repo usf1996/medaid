@@ -94,10 +94,10 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-info">
-                                <span id="dCenterName">Name</span>
+                                <span id="dCenterName"></span>
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>
-									<span id="dCenterEmail">&nbsp;Email<span>
+									<span id="dCenterEmail"><span>
                                 </div>
                             </div>
                         </div>
@@ -184,33 +184,27 @@
 								<div class="table-responsive">
 								  <table class="table table-striped table-bordered table-hover" id="dataTables-example2">
 									<thead>
-												<tr>
-												  <th>Event Name</th>
-												  <th>Location</th>
-												  <th>Start Date</th>
-												  <th>End Date</th>
-												  <th>Start Time</th>
-												  <th>End Time</th>
-												</tr>
-											  </thead>
-											  <tbody>
-												<tr>
-												  <td>LAU Blood Drive</td>
-												  <td>LAU Byblos</td>
-												  <td>07-April-2017</td>
-												  <td>08-April-2017</td>
-												  <td>08:00 AM</td>
-												  <td>03:00 PM</td>
-												</tr>
-												<tr>
-												  <td>AUB Blood Drive</td>
-												  <td>AUB</td>
-												  <td>09-April-2017</td>
-												  <td>12-April-2017</td>
-												  <td>08:00 AM</td>
-												  <td>03:00 PM</td>
-												</tr>
-											  </tbody>
+										<tr>
+										  <th>Event Name</th>
+										  <th>Location</th>
+										  <th>Start Date</th>
+										  <th>End Date</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+										  <td>LAU Blood Drive</td>
+										  <td>LAU Byblos</td>
+										  <td>07-April-2017</td>
+										  <td>08-April-2017</td>
+										</tr>
+										<tr>
+										  <td>AUB Blood Drive</td>
+										  <td>AUB</td>
+										  <td>09-April-2017</td>
+										  <td>12-April-2017</td>
+										</tr>
+									</tbody>
 								  </table>
 								</div>
 							  </div>
@@ -260,6 +254,9 @@
 	$(document).ready(function() {
 		var obj = JSON.parse(localStorage.getItem("loginData"));
 		
+		document.getElementById('dCenterName').innerHTML = data.dcentername;
+		document.getElementById('dCenterEmail').innerHTML = data.email;
+		
 		$.ajax({
 			type: 'post',
 			url: '/assets/php/passLoginData.php',
@@ -272,8 +269,7 @@
 		})
 	  
 		.done(function(data) {
-			document.getElementById('dCenterName').innerHTML = data.dcentername;
-			document.getElementById('dCenterEmail').innerHTML = data.email;
+			console.log(data);
 		});
 	});
 	</script>
