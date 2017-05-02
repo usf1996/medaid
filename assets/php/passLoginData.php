@@ -15,7 +15,7 @@ switch($usertype){
 		if ($getResults == FALSE)
 			echo (sqlsrv_errors());
 		else{
-			while ($row = sqlsrv_fetch_array($getResults)) {
+			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 				$data['userid'] = $row['userid'];
 				$data['gender'] = $row['gender'];
 				$data['dob'] = $row['dob'];
@@ -38,7 +38,7 @@ switch($usertype){
 		if ($getResults == FALSE)
 			echo (sqlsrv_errors());
 		else{
-			while ($row = sqlsrv_fetch_array($getResults)) {
+			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 				$data['dcenterid'] = $row['dcenterid'];
 				$data['dcentername'] = $row['dcentername'];
 				$data['email'] = $row['email'];
@@ -59,7 +59,7 @@ switch($usertype){
 		if ($getResults == FALSE)
 			echo (sqlsrv_errors());
 		else{
-			while ($row = sqlsrv_fetch_array($getResults)) {
+			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 				$data['redcrossid'] = $row['redcrossid'];
 				$data['redcrossname'] = $row['redcrossname'];
 				$data['email'] = $row['email'];
@@ -75,6 +75,6 @@ switch($usertype){
 
 
 sqlsrv_free_stmt($getResults);
-echo json_encode($data);
+echo json_encode($id);
 
 ?>
