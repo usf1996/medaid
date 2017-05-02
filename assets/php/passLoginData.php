@@ -2,6 +2,7 @@
 include 'connect.php';
 
 $data = array();
+$tablerow = array();
 
 $usertype = $_POST['usertype'];
 
@@ -47,7 +48,7 @@ switch($usertype){
 				$data['driveloc'] = $row['driveloc'];
 				$data['sdate'] = $row['sdate'];
 				$data['edate'] = $row['edate'];
-				echo json_encode($data);
+				array_push($tablerow, $data);
 			}
 		}
 		break;
@@ -76,5 +77,6 @@ switch($usertype){
 }
 
 sqlsrv_free_stmt($getResults);
+echo json_encode($tablerow);
 
 ?>
