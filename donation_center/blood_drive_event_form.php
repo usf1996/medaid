@@ -66,9 +66,10 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-info">
-                                <div>Jonny <strong>Deen</strong></div>
+                                <span id="dCenterName"></span>
                                 <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>
+									<span id="dCenterEmail"><span>
                                 </div>
                             </div>
                         </div>
@@ -117,40 +118,32 @@
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-lg-6">
-                      <form role="form">
+                      <form id="drive-form" role="form">
                         <div class="form-group">
                           <label>Event Name</label>
-                          <input class="form-control">
+                          <input name="name" class="form-control">
                         </div>
                         <div class="form-group">
                           <label>Event Location</label>
-                          <input class="form-control">
+                          <input name="location" class="form-control">
                         </div>
                         <div class="form-group">
                         	<label>Start Date</label>
-                        	<input type="date" name="startDate">
+                        	<input name="sdate" type="date" name="startDate">
                         </div>
                         <div class="form-group">
                         	<label>End Date</label>
-                        	<input type="date" name="endDate">
-                        </div>
-                        <div class="form-group">
-                        	<label>Start Time</label>
-                        	<input type="time" name="startTime">
-                        </div>
-                        <div class="form-group">
-                        	<label>End Time</label>
-                        	<input type="time" name="endTime">
+                        	<input name="edate" type="date" name="endDate">
                         </div>
 						<div class="form-group">
                          <label>Add Additional Details</label>
                           <textarea name="textarea" rows="3" class="form-control"></textarea>
                         </div>
-<button type="submit" class="btn btn-primary">Submit Button</button>
+						<button type="submit" class="btn btn-primary">Submit Button</button>
                         <button type="reset" class="btn btn-success">Reset Button</button>
                       </form>
-</div>
-</div>
+					</div>
+				</div>
                 </div>
               </div>
               <!-- End Form Elements -->
@@ -168,6 +161,44 @@
     <script src="../assets/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="../assets/plugins/pace/pace.js"></script>
     <script src="../assets/scripts/medaid.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var obj = JSON.parse(localStorage.getItem("loginData"));
+		
+		$("#dCenterName").text(obj.dcentername);
+		$("#dCenterEmail").text(obj.email);
+		
+		$("#drive-form").submit(function(event) {
+
+			/* stop form from submitting normally */
+			event.preventDefault();
+
+			var formData = {
+				'dcenterid': obj.dcenterid,
+				'drivename': $('input[name=name]').val(),
+				'driveloc': $('input[name=location]').val(),
+				'sdate': $('input[name=sdate]').val(),
+				'edate': $('input[name=location]').val(),
+				'info': $('textarea[name=textarea]').val()
+			};
+			
+			/* get some values from elements on the page: */
+			$.ajax({
+				type: 'post',
+				url: '/assets/php/donation_center/blood_drive_event_form.php',
+				data: formData,
+				dataType: 'json',
+				encode: true
+			})
+		  
+			.done(function(data) {
+				
+			});
+		});
+	});
+	</script>
+	
 </body>
 
 </html>

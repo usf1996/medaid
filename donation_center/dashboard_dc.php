@@ -226,19 +226,15 @@
 		
 		$.ajax({
 			type: 'post',
-			url: '/assets/php/dashboard_dc.php',
+			url: '/assets/php/donation_center/dashboard_dc.php',
 			data: obj,
 			dataType: 'json',
-			encode: true,
-			error: function(xhr){
-				alert("An error occured: " + xhr.status + " " + xhr.statusText);
-			}
+			encode: true
 		})
 	  
 		.done(function(dataSet) {
 			var d_data = [];
 			var r_data = [];
-			console.log(dataSet);
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
 				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
