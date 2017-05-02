@@ -264,7 +264,8 @@
 			url: '/assets/php/passLoginData.php',
 			data: obj,
 			dataType: 'json',
-			encode: true
+			encode: true,
+			error: {console.log("nayyak");}
 		})
 	  
 		.done(function(data) {
