@@ -193,7 +193,7 @@
 			})
 		  
 			.done(function(data) {
-				alert("Done");
+				console.log(data);
 			});
 		});
 	});
