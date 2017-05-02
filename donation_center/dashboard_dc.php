@@ -265,14 +265,16 @@
 		})
 	  
 		.done(function(data) {
+			var toadd;
 			for(i = 0; i < data.legth; i++){
-				$("#dataTables-blooddrive-body").html("<tr>"+
-														"<td>" + data[i][0] + "</td>" +
-														"<td>" + data[i][1] + "</td>" +
-														"<td>" + data[i][2] + "</td>" +
-														"<td>" + data[i][3] + "</td>" +
-													"</tr>");
+				toadd +="<tr>"+
+						"<td>" + data[i][0] + "</td>" +
+						"<td>" + data[i][1] + "</td>" +
+						"<td>" + data[i][2] + "</td>" +
+						"<td>" + data[i][3] + "</td>" +
+						"</tr>");
 			}
+			$("#dataTables-blooddrive-body').html(toadd);
 		});
 	});
 	</script>
