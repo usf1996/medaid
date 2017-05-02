@@ -274,7 +274,7 @@
 					{"drivedata" : "sdate"},
 					{"drivedata" : "edate"}
 				]
-			}
+			});
 			
 			/*for(i = 0; i < data.length; i++){
 				toadd +="<tr>" +
