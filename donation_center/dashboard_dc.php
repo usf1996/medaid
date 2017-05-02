@@ -265,7 +265,9 @@
 			data: obj,
 			dataType: 'json',
 			encode: true,
-			error: {console.log("nayyak");}
+			error: function(xhr){
+				alert("An error occured: " + xhr.status + " " + xhr.statusText);
+			}
 		})
 	  
 		.done(function(data) {
