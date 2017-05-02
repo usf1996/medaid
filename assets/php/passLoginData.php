@@ -6,7 +6,7 @@ $data = array();
 $usertype = $_POST['usertype'];
 
 switch($usertype){
-	case 1:{
+	case '1':{
 		$id = $_POST['userid'];
 		$tsql= "SELECT * FROM citizen WHERE userid = 1";
 		
@@ -29,7 +29,7 @@ switch($usertype){
 		}
 		break;
 	}
-	case 2:{
+	case '2':{
 		$id = $_POST['dcenterid'];
 		$tsql= "SELECT * FROM donationcenter WHERE dcenterid = 1";
 		
@@ -50,7 +50,7 @@ switch($usertype){
 		}
 		break;
 	}
-	case 3:{
+	case '3':{
 		$id = $_POST['redcrossid'];
 		$tsql= "SELECT * FROM redcross WHERE redcrossid = 1";
 		
