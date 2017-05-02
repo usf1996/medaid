@@ -139,8 +139,8 @@
                          <label>Add Additional Details</label>
                           <textarea name="textarea" rows="3" class="form-control"></textarea>
                         </div>
-						<button type="submit" class="btn btn-primary">Submit Button</button>
-                        <button type="reset" class="btn btn-success">Reset Button</button>
+						<button type="submit" class="btn btn-primary">Submit Blood Drive</button>
+                        <button type="reset" class="btn btn-success">Reset Form</button>
                       </form>
 					</div>
 				</div>
@@ -187,13 +187,11 @@
 			$.ajax({
 				type: 'post',
 				url: '/assets/php/donation_center/blood_drive_event_form.php',
-				data: formData,
-				dataType: 'json',
-				encode: true
+				data: formData
 			})
 		  
 			.done(function(data) {
-				console.log(data);
+				alert("Blood Drive Successfully Added");
 			});
 		});
 	});
