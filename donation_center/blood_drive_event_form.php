@@ -173,7 +173,7 @@
 
 			/* stop form from submitting normally */
 			event.preventDefault();
-
+			console.log($('input[name=sdate]').val());
 			var formData = {
 				'dcenterid': obj.dcenterid,
 				'drivename': $('input[name=name]').val(),

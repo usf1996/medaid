@@ -3,8 +3,8 @@ include 'connect.php';
 
 $drivename = $_POST['drivename'];
 $driveloc = $_POST['driveloc'];
-$sdate = $_POST['sdate'];
-$edate = $_POST['edate'];
+$sdate = date('Y-m-d', strtotime($_POST['sdate']));
+$edate = date('Y-m-d', strtotime($_POST['edate']));
 $info = $_POST['info'];
 $dcenterid = $_POST['dcenterid'];
 
