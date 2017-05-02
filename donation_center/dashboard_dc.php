@@ -262,7 +262,17 @@
     [ "Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500" ],
     [ "Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050" ]
 ];
-		
+		$('#dataTables-blooddrive').DataTable({
+				data: dataset,
+				columns: [ 
+					{ title: "drivename"},
+					{ title: "driveloc"},
+					{ title: "sdate"},
+					{ title: "edate"},
+					{ title: "sdate"},
+					{ title: "edate"}
+				]
+			});
 		$.ajax({
 			type: 'post',
 			url: '/assets/php/passLoginData.php',
@@ -275,17 +285,7 @@
 		})
 	  
 		.done(function(data) {
-			$('#dataTables-blooddrive').DataTable({
-				data: dataset,
-				columns: [ 
-					{ title: "drivename"},
-					{ title: "driveloc"},
-					{ title: "sdate"},
-					{ title: "edate"},
-					{ title: "sdate"},
-					{ title: "edate"}
-				]
-			});
+			
 		});
 	});
 	</script>
