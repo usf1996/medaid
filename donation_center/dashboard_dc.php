@@ -258,8 +258,8 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		console.log("dashboard");
-		var obj = JSON.parse(localStorage.getItem("loginData"));
-		console.log(obj.usertype);
+		var obj = localStorage.getItem("loginData");
+		console.log(obj);
 		/*var xhttp;
 		xhttp=new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
