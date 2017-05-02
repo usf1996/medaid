@@ -2,7 +2,12 @@
 include 'connect.php';
 
 $data = array();
-$tablerow = array();
+
+$drivedata = array();
+$drivetable = array();
+
+$reqdata = array();
+$reqtable = array();
 
 $usertype = $_POST['usertype'];
 
@@ -44,13 +49,34 @@ switch($usertype){
 			echo (sqlsrv_errors());
 		else{
 			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-				$data['drivename'] = $row['drivename'];
-				$data['driveloc'] = $row['driveloc'];
-				$data['sdate'] = $row['sdate'];
-				$data['edate'] = $row['edate'];
-				array_push($tablerow, $data);
+				$drivedata['drivename'] = $row['drivename'];
+				$drivedata['driveloc'] = $row['driveloc'];
+				$drivedata['sdate'] = $row['sdate'];
+				$drivedata['edate'] = $row['edate'];
+				array_push($drivetable, $drivedata);
 			}
+			$data['drivedata'] = $drivetable;
 		}
+		
+		$tsql= "SELECT bloodreq.bloodtype, bloodreq.hospital
+				FROM donationcenter join bloodreq
+					ON bloodreq.dcenterid = donationcenter.dcenterid 
+						AND bloodreq.dcenterid = '$id'
+						AND donationcenter.dcenterid = '$id'";
+		
+		$getResults= sqlsrv_query($conn, $tsql);
+
+		if ($getResults == FALSE)
+			echo (sqlsrv_errors());
+		else{
+			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+				$reqdata['bloodtype'] = $row['bloodtype'];
+				$reqdata['hospital'] = $row['hospital'];
+				array_push($reqtable, $reqdata);
+			}
+			$data['reqdata'] = $reqtable;
+		}
+		
 		break;
 	}
 	case 3:{
@@ -77,6 +103,6 @@ switch($usertype){
 }
 
 sqlsrv_free_stmt($getResults);
-echo json_encode($tablerow);
+echo json_encode($data);
 
 ?>
