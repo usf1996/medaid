@@ -191,13 +191,8 @@
 										  <th>End Date</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-										  <td>LAU Blood Drive</td>
-										  <td>LAU Byblos</td>
-										  <td>07-April-2017</td>
-										  <td>08-April-2017</td>
-										</tr>
+									<tbody id="dataTables-blooddrive-body">
+										
 										<tr>
 										  <td>AUB Blood Drive</td>
 										  <td>AUB</td>
@@ -257,22 +252,7 @@
 		
 		$("#dCenterName").text(obj.dcentername);
 		$("#dCenterEmail").text(obj.email);
-		var dataSet = [
-    [ "Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800" ],
-    [ "Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500" ],
-    [ "Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050" ]
-];
-		$('#dataTables-blooddrive').DataTable({
-				data: dataSet,
-				columns: [ 
-					{ title: "drivename"},
-					{ title: "driveloc"},
-					{ title: "sdate"},
-					{ title: "edate"},
-					{ title: "sdate"},
-					{ title: "edate"}
-				]
-			});
+		
 		$.ajax({
 			type: 'post',
 			url: '/assets/php/passLoginData.php',
@@ -285,7 +265,14 @@
 		})
 	  
 		.done(function(data) {
-			
+			for(i = 0; i < data.legth; i++){
+				$("#dataTables-blooddrive-body").html("<tr>"+
+														"<td>" + data[i][0] + "</td>" +
+														"<td>" + data[i][1] + "</td>" +
+														"<td>" + data[i][2] + "</td>" +
+														"<td>" + data[i][3] + "</td>" +
+													"</tr>");
+			}
 		});
 	});
 	</script>
