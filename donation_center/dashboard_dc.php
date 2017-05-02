@@ -269,10 +269,10 @@
 			console.log(data)
 			for(i = 0; i < data.length; i++){
 				toadd +="<tr>" +
-						"<td>" + data[i][0] + "</td>" +
-						"<td>" + data[i][1] + "</td>" +
-						"<td>" + data[i][2] + "</td>" +
-						"<td>" + data[i][3] + "</td>" +
+						"<td>" + data[i].drivename + "</td>" +
+						"<td>" + data[i].driveloc + "</td>" +
+						"<td>" + data[i].sdate + "</td>" +
+						"<td>" + data[i].edate + "</td>" +
 						"</tr>";
 				console.log(toadd);
 			}
