@@ -69,9 +69,6 @@ switch($_POST['usertype'];){
 		}
 		break;
 	}
-	default:{
-		$data['asd'] = "asd";
-	}
 }
 
 
