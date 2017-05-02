@@ -73,6 +73,5 @@ switch($data['usertype']){
 		break;
 	}
 }
-echo json_encode($data);
 
 ?>

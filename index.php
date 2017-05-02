@@ -157,6 +157,26 @@
 					'password': $('input[name=password]').val()
 				};
 				
+				function getErrorMessage(jqXHR, exception) {
+					var msg = '';
+					if (jqXHR.status === 0) {
+						msg = 'Not connect.\n Verify Network.';
+					} else if (jqXHR.status == 404) {
+						msg = 'Requested page not found. [404]';
+					} else if (jqXHR.status == 500) {
+						msg = 'Internal Server Error [500].';
+					} else if (exception === 'parsererror') {
+						msg = 'Requested JSON parse failed.';
+					} else if (exception === 'timeout') {
+						msg = 'Time out error.';
+					} else if (exception === 'abort') {
+						msg = 'Ajax request aborted.';
+					} else {
+						msg = 'Uncaught Error.\n' + jqXHR.responseText;
+					}
+					$('#post').html(msg);
+				}
+				
 				/* get some values from elements on the page: */
 				$.ajax({
 					type: 'post',
@@ -164,13 +184,12 @@
 					data: formData,
 					dataType: 'json',
 					encode: true,
-					error: function(xhr, status, error) {
-							  var err = eval(xhr.responseText);
-							  alert("Error: " + err);
-							}
+					error: function (jqXHR, exception) {
+								getErrorMessage(jqXHR, exception);
+							},
 				})
 			  
-				/*.done(function(data) {
+				.done(function(data) {
 					console.log("jh");
 					switch(data['usertype']){
 						case 0:{
