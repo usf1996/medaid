@@ -263,11 +263,11 @@
 			}
 		})
 	  
-		.done(function(data) {
-			console.log(data)
+		.done(function(dataSet) {
+			console.log(dataSet)
 			
 			$('#dataTables-blooddrive').DataTable( {
-				data: data,
+				data: dataSet,
 				columns:[
 					{"drivedata" : "drivename"},
 					{"drivedata" : "driveloc"},
