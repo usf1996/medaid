@@ -238,13 +238,14 @@
 		.done(function(dataSet) {
 			var d_data = [];
 			var r_data = [];
+			console.log(dataSet);
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
 				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
 			}
 			
 			for(i = 0; i < dataSet.reqdata.length; i++){
-				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital);
+				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
 			}
 			
 			$('#dataTables-blooddrive').DataTable( {
