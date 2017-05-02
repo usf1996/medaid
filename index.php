@@ -165,7 +165,7 @@
 					dataType: 'json',
 					encode: true,
 					error: function(xhr, status, error) {
-							  var err = eval("(" + xhr.responseText + ")");
+							  var err = eval(xhr.responseText);
 							  alert(err.Message);
 							}
 				})
