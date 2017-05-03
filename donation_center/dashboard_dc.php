@@ -251,7 +251,7 @@
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
 				data: d_data,
 				"columnDefs": [ {
-					"targets": -1,
+					"targets": [5],
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
 				},
