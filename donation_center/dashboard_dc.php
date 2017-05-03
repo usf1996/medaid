@@ -257,7 +257,7 @@
 			});
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
-				var row = dataTables_blooddrive.row( $(this).parents('tr') );
+				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
 				var data = row.data();
 				var driveid = data[4];
 				$.ajax({
@@ -268,7 +268,7 @@
 				
 				.done(function(data) {
 					alert("Blood Drive Successfully Deleted");
-					dataTables_blooddrive.row( row ).remove().draw(false);
+					delrow.remove().draw(false);
 				});
 				
 			} );
