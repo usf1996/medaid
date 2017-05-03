@@ -186,26 +186,18 @@
 					encode: true,
 					error: function (jqXHR, exception) {
 								getErrorMessage(jqXHR, exception);
-							},
-					success: function (result,status,xhr){
-								if(!result.success){
-									alert("Wrong Credentials, Please Try Again!");
-								}else{
-									alert("Akal");
-									/*$.ajax({
+							}
+				});
+			  
+				.done(function(data) {
+					console.log("jh");
+					switch(data['usertype']){
+						case 0:{
+							/*$.ajax({
 										type: 'post',
 										url: 'assets/php/login_register/start_session.php',
 										data: result
 									});*/
-								}
-								
-							}
-				});
-			  
-				/*.done(function(data) {
-					console.log("jh");
-					switch(data['usertype']){
-						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
 							break;
 						}
@@ -223,7 +215,7 @@
 							break;
 						}
 					}
-				});*/
+				});
 			});
 		});
 	</script>
