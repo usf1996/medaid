@@ -53,25 +53,28 @@ sqlsrv_free_stmt($getResults);
 
 switch($data['usertype']){
 	case 0:{
-		$data['status'] = "Wrong Login Credentials, Please Try Again";
-		echo json_encode($data);
+		$data['sucess'] = false;
 		break;
 	}
 	case 1:{
-		session_start();
-		header('Location: http://medaid.azurewebsites.net/');
+		$data['sucess'] = true;
+		//header('Location: http://medaid.azurewebsites.net/');
 		break;
 	}
 	case 2:{
 		session_start();
-		header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
+		$data['sucess'] = true;
+		//header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
 		break;
 	}
 	case 3:{
 		session_start();
-		header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
+		$data['sucess'] = true;
+		//header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
 		break;
 	}
 }
+
+echo json_encode($data);
 
 ?>
