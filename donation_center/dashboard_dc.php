@@ -267,7 +267,7 @@
 					alert(msg);
 			}
 			
-			$('#dataTables-blooddrive').DataTable( {
+			var dataTables-blooddrive = $('#dataTables-blooddrive').DataTable( {
 				data: d_data,
 				"columnDefs": [ {
 					"targets": -1,
@@ -277,8 +277,8 @@
 			});
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
-				var data = table.row( $(this).parents('tr') ).data();
-				alert( data[0] +"'s salary is: "+ data[1] );
+				var data = dataTables-blooddrive.row( $(this).parents('tr') ).data();
+				console.log(data[4]);
 				
 			} );
 			
