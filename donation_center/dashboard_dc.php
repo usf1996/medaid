@@ -267,7 +267,7 @@
 					alert(msg);
 			}
 			
-			var dataTables-blooddrive = $('#dataTables-blooddrive').DataTable( {
+			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
 				data: d_data,
 				"columnDefs": [ {
 					"targets": -1,
@@ -277,8 +277,13 @@
 			});
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
-				var data = dataTables-blooddrive.row( $(this).parents('tr') ).data();
+				var data = dataTables_blooddrive.row( $(this).parents('tr') ).data();
 				console.log(data[4]);
+				$.ajax({
+					type: 'post',
+					url: 'assets/php/login_register/delete_drive.php',
+					data: data[4]
+				})
 				
 			} );
 			
