@@ -62,13 +62,11 @@ switch($data['usertype']){
 		break;
 	}
 	case 2:{
-		session_start();
 		$data['sucess'] = true;
 		//header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
 		break;
 	}
 	case 3:{
-		session_start();
 		$data['sucess'] = true;
 		//header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
 		break;
