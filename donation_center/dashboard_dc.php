@@ -175,6 +175,7 @@
 										  <th>Location</th>
 										  <th>Start Date</th>
 										  <th>End Date</th>
+										  <th>ID</th>
 										  <th></th>
 										</tr>
 									</thead>
@@ -238,11 +239,31 @@
 			var r_data = [];
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
-				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
+				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate], dataSet.drivedata[i].driveid);
 			}
 			
 			for(i = 0; i < dataSet.reqdata.length; i++){
 				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
+			}
+			
+			function getErrorMessage(jqXHR, exception) {
+					var msg = '';
+					if (jqXHR.status === 0) {
+						msg = 'Not connect.\n Verify Network.';
+					} else if (jqXHR.status == 404) {
+						msg = 'Requested page not found. [404]';
+					} else if (jqXHR.status == 500) {
+						msg = 'Internal Server Error [500].';
+					} else if (exception === 'parsererror') {
+						msg = 'Requested JSON parse failed.';
+					} else if (exception === 'timeout') {
+						msg = 'Time out error.';
+					} else if (exception === 'abort') {
+						msg = 'Ajax request aborted.';
+					} else {
+						msg = 'Uncaught Error.\n' + jqXHR.responseText;
+					}
+					alert(msg);
 			}
 			
 			$('#dataTables-blooddrive').DataTable( {
@@ -251,11 +272,32 @@
 					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+				}, 
+				
+				{
+					"targets": [ 2 ],
+					"visible": false
+				},
+				
+				{
+					"targets": [ 3 ],
+					"visible": false
 				} ]
 			});
 			
+			$('#example tbody').on( 'click', 'button', function () {
+				var data = table.row( $(this).parents('tr') ).data();
+				console.log(data);
+				
+			} );
+			
 			$('#dataTables-bloodtype').DataTable( {
-				data: r_data
+				data: r_data,
+				"columnDefs": [ {
+					"targets": -1,
+					"data": null,
+					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+				} ]
 			});
 			
 		});
