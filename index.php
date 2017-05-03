@@ -174,7 +174,7 @@
 					} else {
 						msg = 'Uncaught Error.\n' + jqXHR.responseText;
 					}
-					$('#post').html(msg);
+					alert(msg);
 				}
 				
 				/* get some values from elements on the page: */
@@ -210,7 +210,7 @@
 							break;
 						}
 					}
-				});*/
+				});
 			});
 		});
 	</script>
