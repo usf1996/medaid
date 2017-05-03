@@ -284,7 +284,7 @@
 			});
 			
 			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
-				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
+				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
 				var data = delrow.data();
 				var reqid = data[2];
 				$.ajax({
