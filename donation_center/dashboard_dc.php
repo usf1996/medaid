@@ -274,7 +274,7 @@
 				
 			} );
 			
-			$('#dataTables-bloodtype').DataTable( {
+			var dataTables_bloodtype = $('#dataTables-bloodtype').DataTable( {
 				data: r_data,
 				"columnDefs": [ {
 					"targets": -1,
