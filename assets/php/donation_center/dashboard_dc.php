@@ -59,7 +59,7 @@ switch($usertype){
 			$data['drivedata'] = $drivetable;
 		}
 		
-		$tsql= "SELECT bloodreq.bloodtype, bloodreq.hospital
+		$tsql= "SELECT bloodreq.reqid, bloodreq.bloodtype, bloodreq.hospital
 				FROM donationcenter join bloodreq
 					ON bloodreq.dcenterid = donationcenter.dcenterid 
 						AND bloodreq.dcenterid = '$id'
@@ -71,6 +71,7 @@ switch($usertype){
 			echo (sqlsrv_errors());
 		else{
 			while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+				$reqdata['reqid'] = $row['reqid'];
 				$reqdata['bloodtype'] = $row['bloodtype'];
 				$reqdata['hospital'] = $row['hospital'];
 				array_push($reqtable, $reqdata);

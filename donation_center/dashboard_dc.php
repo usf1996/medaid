@@ -286,11 +286,11 @@
 			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
 				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
 				var data = delrow.data();
-				var driveid = data[2];
+				var reqid = data[2];
 				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/delete_blood.php',
-					data: {"driveid": driveid}
+					data: {"reqid": reqid}
 				})
 				
 				.done(function(data) {
