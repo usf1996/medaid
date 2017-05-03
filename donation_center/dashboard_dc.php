@@ -240,7 +240,7 @@
 			var r_data = [];
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
-				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
+				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate, dataSet.drivedata[i].driveid]);
 			}
 			
 			for(i = 0; i < dataSet.reqdata.length; i++){
