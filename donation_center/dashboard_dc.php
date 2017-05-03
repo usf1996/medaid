@@ -251,14 +251,9 @@
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
 				data: d_data,
 				"columnDefs": [ {
-					"targets": [5],
+					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
-				},
-				{
-					"targets": [4],
-					"visible": false,
-					"searchable": false
 				}
 				]
 			});
