@@ -254,7 +254,13 @@
 					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
-				}]
+				},
+				{
+					"targets": [4],
+					"visible": false,
+					"searchable": false
+				}
+				]
 			});
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
@@ -280,7 +286,13 @@
 					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
-				} ]
+				},
+				{
+					"targets": [2],
+					"visible": false,
+					"searchable": false
+				}
+				]
 			});
 			
 			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
