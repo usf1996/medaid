@@ -258,7 +258,7 @@
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
 				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
-				var data = row.data();
+				var data = delrow.data();
 				var driveid = data[4];
 				$.ajax({
 					type: 'post',
