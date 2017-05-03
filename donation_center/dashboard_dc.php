@@ -276,7 +276,7 @@
 				}]
 			});
 			
-			$('#example tbody').on( 'click', 'button', function () {
+			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
 				var data = table.row( $(this).parents('tr') ).data();
 				console.log(data);
 				
