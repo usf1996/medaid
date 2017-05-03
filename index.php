@@ -195,7 +195,7 @@
 										type: 'post',
 										url: 'assets/php/login_register/start_session.php',
 										data: result
-									}
+									});
 								}
 								
 							}
