@@ -180,24 +180,19 @@
 				/* get some values from elements on the page: */
 				$.ajax({
 					type: 'post',
-					url: '/assets/php/login_register/login.php',
+					url: 'assets/php/login_register/login.php',
 					data: formData,
 					dataType: 'json',
 					encode: true,
 					error: function (jqXHR, exception) {
 								getErrorMessage(jqXHR, exception);
-							}
+							},
 				})
 			  
 				.done(function(data) {
 					console.log("jh");
 					switch(data['usertype']){
 						case 0:{
-							/*$.ajax({
-										type: 'post',
-										url: 'assets/php/login_register/start_session.php',
-										data: result
-									});*/
 							alert("Wrong Login Credentials, Please Try Again");
 							break;
 						}
@@ -206,7 +201,7 @@
 							break;
 						}
 						case 2:{
-							//localStorage.setItem("loginData", JSON.stringify(data));
+							localStorage.setItem("loginData", JSON.stringify(data));
 							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
 							break;
 						}

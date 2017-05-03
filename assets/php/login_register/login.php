@@ -14,10 +14,9 @@ $tsql= "SELECT * FROM (
 		SELECT redcrossid AS id, redcrossname AS label, email, pass, usertype FROM redcross) AS loginres WHERE email = '$email' AND pass = '$password'";
 $getResults= sqlsrv_query($conn, $tsql);
 
-if ($getResults == FALSE){}
+if ($getResults == FALSE)
     echo (sqlsrv_errors());
-	$data['status'] = "Query Error!";
-}else{
+else{
 	if(!sqlsrv_has_rows($getResults)){
 		$data['usertype'] = 0;
 	}else{
@@ -50,26 +49,6 @@ if ($getResults == FALSE){}
 }
 
 sqlsrv_free_stmt($getResults);
-
-switch($data['usertype']){
-	case 0:{
-		$data['sucess'] = "false";
-		break;
-	}
-	case 1:{
-		$data['sucess'] = "true";
-		break;
-	}
-	case 2:{
-		$data['sucess'] = "true";
-		break;
-	}
-	case 3:{
-		$data['sucess'] = "true";
-		break;
-	}
-}
-
 echo json_encode($data);
 
 ?>
