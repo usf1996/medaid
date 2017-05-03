@@ -8,7 +8,7 @@ $edate = date('Y-m-d', strtotime($_POST['edate']));
 $info = $_POST['info'];
 $dcenterid = $_POST['dcenterid'];
 
-$tsql= "insert into blooddrive(drivename, driveloc, sdate, edate, info, dcenterid) VALUES (?,?,?,?,?,?);";
+$tsql= "insert into blooddrive(drivename, driveloc, sdate, edate, info, dcenterid) VALUES (?,?,?,?,?,?)";
 $params = array($drivename, $driveloc, $sdate, $edate, $info, $dcenterid);
 $getResults= sqlsrv_query($conn, $tsql, $params);
 if ($getResults == FALSE)

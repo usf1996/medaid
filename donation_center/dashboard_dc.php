@@ -247,26 +247,6 @@
 				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
 			}
 			
-			function getErrorMessage(jqXHR, exception) {
-					var msg = '';
-					if (jqXHR.status === 0) {
-						msg = 'Not connect.\n Verify Network.';
-					} else if (jqXHR.status == 404) {
-						msg = 'Requested page not found. [404]';
-					} else if (jqXHR.status == 500) {
-						msg = 'Internal Server Error [500].';
-					} else if (exception === 'parsererror') {
-						msg = 'Requested JSON parse failed.';
-					} else if (exception === 'timeout') {
-						msg = 'Time out error.';
-					} else if (exception === 'abort') {
-						msg = 'Ajax request aborted.';
-					} else {
-						msg = 'Uncaught Error.\n' + jqXHR.responseText;
-					}
-					alert(msg);
-			}
-			
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
 				data: d_data,
 				"columnDefs": [ {
@@ -278,12 +258,16 @@
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
 				var data = dataTables_blooddrive.row( $(this).parents('tr') ).data();
-				console.log(data[4]);
+				var driveid = data[4];
 				$.ajax({
 					type: 'post',
 					url: 'assets/php/login_register/delete_drive.php',
-					data: data[4]
+					data: {"driveid": driveid}
 				})
+				
+				.done(function(data) {
+					alert("Blood Drive Successfully Deleted");
+				});
 				
 			} );
 			
