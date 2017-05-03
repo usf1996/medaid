@@ -245,7 +245,12 @@
 			}
 			
 			$('#dataTables-blooddrive').DataTable( {
-				data: d_data
+				data: d_data,
+				"columnDefs": [ {
+					"targets": -1,
+					"data": null,
+					"defaultContent": "<button>Click!</button>"
+				} ]
 			});
 			
 			$('#dataTables-bloodtype').DataTable( {

@@ -190,7 +190,6 @@
 				})
 			  
 				.done(function(data) {
-					console.log("jh");
 					switch(data['usertype']){
 						case 0:{
 							alert("Wrong Login Credentials, Please Try Again");
