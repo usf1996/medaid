@@ -275,14 +275,9 @@
 				}, 
 				
 				{
-					"targets": [ 2 ],
+					"targets": [ 4 ],
 					"visible": false
-				},
-				
-				{
-					"targets": [ 3 ],
-					"visible": false
-				} ]
+				}
 			});
 			
 			$('#example tbody').on( 'click', 'button', function () {
