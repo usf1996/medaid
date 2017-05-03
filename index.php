@@ -187,7 +187,7 @@
 					error: function (jqXHR, exception) {
 								getErrorMessage(jqXHR, exception);
 							}
-				});
+				})
 			  
 				.done(function(data) {
 					console.log("jh");
