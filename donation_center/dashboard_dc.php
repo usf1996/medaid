@@ -261,7 +261,7 @@
 				var driveid = data[4];
 				$.ajax({
 					type: 'post',
-					url: 'assets/php/login_register/delete_drive.php',
+					url: '/assets/php/donation_center/delete_drive.php',
 					data: {"driveid": driveid}
 				})
 				
