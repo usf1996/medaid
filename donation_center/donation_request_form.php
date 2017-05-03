@@ -64,9 +64,10 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-info">
-                                <div>Jonny <strong>Deen</strong></div>
+                                <span id="dCenterName"></span>
                                 <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>
+									<span id="dCenterEmail"><span>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +115,7 @@
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-lg-6">
-                      <form role="form">
+                      <form role="form" id="blood-form">
 						<div class="form-group">
                           <label>Blood Type Needed:</label>
                           <select name="select" class="form-control">
@@ -129,20 +130,14 @@
                           </select>
                         </div>
                         <div class="form-group">
-                          <label>Hospital:</label>
-                          <select name="select" class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
+                          <label>Hospital</label>
+                          <input name="hospital" class="form-control">
                         </div>
                         <div class="form-group">
                          <label>Add Additional Details</label>
                           <textarea name="textarea" rows="3" class="form-control"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Form</button>
+                        <button type="submit" class="btn btn-primary">Send Donation Request</button>
                         <button type="reset" class="btn btn-success">Reset Form</button>
                       </form>
                     </div>
@@ -166,6 +161,38 @@
     <script src="../assets/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="../assets/plugins/pace/pace.js"></script>
     <script src="../assets/scripts/medaid.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var obj = JSON.parse(localStorage.getItem("loginData"));
+		
+		$("#dCenterName").text(obj.dcentername);
+		$("#dCenterEmail").text(obj.email);
+		
+		$("#blood-form").submit(function(event) {
+
+			/* stop form from submitting normally */
+			event.preventDefault();
+			var formData = {
+				'dcenterid': obj.dcenterid,
+				'bloodtype': $('select[name=select]').val(),
+				'hospital': $('input[name=hospital]').val(),
+				'info': $('textarea[name=textarea]').val()
+			};
+			
+			/* get some values from elements on the page: */
+			$.ajax({
+				type: 'post',
+				url: '/assets/php/donation_center/add_blood.php',
+				data: formData
+			})
+		  
+			.done(function(data) {
+				alert("Blood Request Successfully Added");
+			});
+		});
+	});
+	</script>
 
 </body>
 

@@ -185,7 +185,7 @@
 			/* get some values from elements on the page: */
 			$.ajax({
 				type: 'post',
-				url: '/assets/php/donation_center/blood_drive_event_form.php',
+				url: '/assets/php/donation_center/add_drive.php',
 				data: formData
 			})
 		  

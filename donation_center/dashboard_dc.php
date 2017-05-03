@@ -152,6 +152,7 @@
 													<tr>
 													  <th>Blood Type</th>
 													  <th>Hospital</th>
+													  <th>ID</th>
 													  <th></th>
 													</tr>
 											</thead>
@@ -244,7 +245,7 @@
 			}
 			
 			for(i = 0; i < dataSet.reqdata.length; i++){
-				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
+				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital, dataSet.reqdata[i].reqid]);
 			}
 			
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
@@ -281,6 +282,23 @@
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
 				} ]
 			});
+			
+			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
+				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
+				var data = delrow.data();
+				var driveid = data[2];
+				$.ajax({
+					type: 'post',
+					url: '/assets/php/donation_center/delete_blood.php',
+					data: {"driveid": driveid}
+				})
+				
+				.done(function(data) {
+					alert("Blood Request Successfully Deleted");
+					delrow.remove().draw(false);
+				});
+				
+			} );
 			
 		});
 	});
