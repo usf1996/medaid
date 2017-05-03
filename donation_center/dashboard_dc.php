@@ -150,9 +150,9 @@
 										  <table class="table table-striped table-bordered table-hover" id="dataTables-bloodtype">
 											<thead>
 													<tr>
+													  <th>ID</th>
 													  <th>Blood Type</th>
 													  <th>Hospital</th>
-													  <th>ID</th>
 													  <th></th>
 													</tr>
 											</thead>
@@ -173,11 +173,11 @@
 								  <table class="table table-striped table-bordered table-hover" id="dataTables-blooddrive">
 									<thead>
 										<tr>
+										  <th>ID</th>
 										  <th>Event Name</th>
 										  <th>Location</th>
 										  <th>Start Date</th>
 										  <th>End Date</th>
-										  <th>ID</th>
 										  <th></th>
 										</tr>
 									</thead>
@@ -241,11 +241,11 @@
 			var r_data = [];
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
-				d_data.push([dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate, dataSet.drivedata[i].driveid]);
+				d_data.push([dataSet.drivedata[i].driveid, dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
 			}
 			
 			for(i = 0; i < dataSet.reqdata.length; i++){
-				r_data.push([dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital, dataSet.reqdata[i].reqid]);
+				r_data.push([dataSet.reqdata[i].reqid, dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
 			}
 			
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
@@ -261,7 +261,7 @@
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
 				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
 				var data = delrow.data();
-				var driveid = data[4];
+				var driveid = data[0];
 				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/delete_drive.php',
@@ -281,11 +281,6 @@
 					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
-				},
-				{
-					"targets": [2],
-					"visible": false,
-					"searchable": false
 				}
 				]
 			});
@@ -293,7 +288,7 @@
 			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
 				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
 				var data = delrow.data();
-				var reqid = data[2];
+				var reqid = data[0];
 				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/delete_blood.php',
