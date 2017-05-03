@@ -192,11 +192,11 @@
 									alert("Wrong Credentials, Please Try Again!");
 								}else{
 									alert("Akal");
-									$.ajax({
+									/*$.ajax({
 										type: 'post',
 										url: 'assets/php/login_register/start_session.php',
 										data: result
-									});
+									});*/
 								}
 								
 							}
