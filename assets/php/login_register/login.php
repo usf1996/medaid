@@ -58,17 +58,14 @@ switch($data['usertype']){
 	}
 	case 1:{
 		$data['sucess'] = "true";
-		//header('Location: http://medaid.azurewebsites.net/');
 		break;
 	}
 	case 2:{
 		$data['sucess'] = "true";
-		//header('Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php');
 		break;
 	}
 	case 3:{
 		$data['sucess'] = "true";
-		//header('Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php');
 		break;
 	}
 }

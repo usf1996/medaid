@@ -180,7 +180,7 @@
 				/* get some values from elements on the page: */
 				$.ajax({
 					type: 'post',
-					url: 'assets/php/login_register/login.php',
+					url: '/assets/php/login_register/login.php',
 					data: formData,
 					dataType: 'json',
 					encode: true,
