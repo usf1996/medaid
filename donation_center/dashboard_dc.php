@@ -267,6 +267,7 @@
 				
 				.done(function(data) {
 					alert("Blood Drive Successfully Deleted");
+					dataTables_blooddrive.row( $(this).parents('tr') ).remove().draw(false);
 				});
 				
 			} );
