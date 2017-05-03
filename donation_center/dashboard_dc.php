@@ -175,6 +175,7 @@
 										  <th>Location</th>
 										  <th>Start Date</th>
 										  <th>End Date</th>
+										  <th></th>
 										</tr>
 									</thead>
 								  </table>
