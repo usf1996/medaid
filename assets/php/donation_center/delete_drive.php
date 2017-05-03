@@ -3,7 +3,7 @@ include 'connect.php';
 
 $driveid = $_POST['driveid'];
 
-$tsql= "delete from blooddrive where driveid = ?";
+$tsql= "delete from blooddrive where driveid = 23";
 $params = array($driveid);
 $getResults= sqlsrv_query($conn, $tsql, $params);
 if ($getResults == FALSE)
