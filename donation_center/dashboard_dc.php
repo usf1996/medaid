@@ -278,7 +278,7 @@
 			
 			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
 				var data = table.row( $(this).parents('tr') ).data();
-				console.log(data);
+				alert( data[0] +"'s salary is: "+ data[1] );
 				
 			} );
 			
