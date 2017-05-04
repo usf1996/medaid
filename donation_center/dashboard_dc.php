@@ -282,7 +282,7 @@
 					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
-				}
+				},
 				{
 					"targets": -2,
 					"className": 'details-control',
