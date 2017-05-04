@@ -254,12 +254,6 @@
 					"targets": -1,
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
-				},
-				{
-                "className":      'details-control',
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": ''
 				}
 				]
 			});
