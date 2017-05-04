@@ -154,6 +154,7 @@
 													  <th>Blood Type</th>
 													  <th>Hospital</th>
 													  <th></th>
+													  <th></th>
 													</tr>
 											</thead>
 										  </table>
@@ -251,7 +252,12 @@
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
 				data: d_data,
 				"columnDefs": [ {
-					"targets": -1,
+					"targets": [3],
+					"data": null,
+					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+				},
+				{
+					"targets": [4],
 					"data": null,
 					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
 				}

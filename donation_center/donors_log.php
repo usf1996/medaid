@@ -66,8 +66,11 @@
               <!-- user image section-->
               <div class="user-section">
                 <div class="user-info">
-                  <div>Jonny <strong>Deen</strong></div>
-                  <div class="user-text-online"> <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online </div>
+                  <span id="dCenterName"></span>
+					<div class="user-text-online">
+						<span class="user-circle-online btn btn-success btn-circle "></span>
+						<span id="dCenterEmail"><span>
+					</div>
                 </div>
               </div>
               <!--end user image section-->
@@ -151,11 +154,92 @@
     <!--    Table JS-->
 	<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#dataTables-example').dataTable();
-        });
-    </script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		var obj = JSON.parse(localStorage.getItem("loginData"));
+		
+		$("#dCenterName").text(obj.dcentername);
+		$("#dCenterEmail").text(obj.email);
+		
+		$.ajax({
+			type: 'post',
+			url: '/assets/php/donation_center/get_log.php',
+			data: {
+				"dcenterid": obj.dcenterid;
+			},
+			dataType: 'json',
+			encode: true
+		})
+	  
+		.done(function(dataSet) {
+			var d_data = [];
+			var r_data = [];
+			
+			for(i = 0; i < dataSet.drivedata.length; i++){
+				d_data.push([dataSet.drivedata[i].driveid, dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
+			}
+			
+			for(i = 0; i < dataSet.reqdata.length; i++){
+				r_data.push([dataSet.reqdata[i].reqid, dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
+			}
+			
+			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
+				data: d_data,
+				"columnDefs": [ {
+					"targets": -1,
+					"data": null,
+					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+				}
+				]
+			});
+			
+			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
+				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
+				var data = delrow.data();
+				var driveid = data[0];
+				$.ajax({
+					type: 'post',
+					url: '/assets/php/donation_center/delete_drive.php',
+					data: {"driveid": driveid}
+				})
+				
+				.done(function(data) {
+					alert("Blood Drive Successfully Deleted");
+					delrow.remove().draw(false);
+				});
+				
+			} );
+			
+			var dataTables_bloodtype = $('#dataTables-bloodtype').DataTable( {
+				data: r_data,
+				"columnDefs": [ {
+					"targets": -1,
+					"data": null,
+					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+				}
+				]
+			});
+			
+			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
+				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
+				var data = delrow.data();
+				var reqid = data[0];
+				$.ajax({
+					type: 'post',
+					url: '/assets/php/donation_center/delete_blood.php',
+					data: {"reqid": reqid}
+				})
+				
+				.done(function(data) {
+					alert("Blood Request Successfully Deleted");
+					delrow.remove().draw(false);
+				});
+				
+			} );
+			
+		});
+	});
+	</script>
     <!--  wrapper -->
 
     <!-- end wrapper -->
