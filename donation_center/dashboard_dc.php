@@ -311,7 +311,7 @@
 				'</table>';
 			}
 			
-			$('#example tbody').on('click', 'td.details-control', function () {
+			$('#dataTables_bloodtype tbody').on('click', 'td.details-control', function () {
 				var tr = $(this).closest('tr');
 				var row = table.row( tr );
 		 
