@@ -260,20 +260,7 @@
 					"targets": -2,
 					"className": 'details-control',
 					"orderable": false,
-					"data": '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-								'<tr>'+
-									'<td>Full name:</td>'+
-									'<td>'+ 'asd' +'</td>'+
-								'</tr>'+
-								'<tr>'+
-									'<td>Extension number:</td>'+
-									'<td>'+ 'asd' +'</td>'+
-								'</tr>'+
-								'<tr>'+
-									'<td>Extra info:</td>'+
-									'<td>And any further details here (images etc)...</td>'+
-								'</tr>'+
-							'</table>',
+					"data": "lkj",
 					"defaultContent": ''
 				}
 				]
