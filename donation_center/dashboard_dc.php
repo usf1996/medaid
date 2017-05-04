@@ -154,7 +154,6 @@
 													  <th>Blood Type</th>
 													  <th>Hospital</th>
 													  <th></th>
-													  <th></th>
 													</tr>
 											</thead>
 										  </table>
