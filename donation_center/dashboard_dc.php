@@ -320,7 +320,7 @@
 					'</tr>'+
 				'</table>';
 				});
-				return "lkj";
+				return table;
 			}
 			
 			$('#dataTables-bloodtype tbody').on('click', 'td.details-control', function () {
