@@ -21,12 +21,8 @@ else{
 		$data['fname'] = $row['fname'];
 		$data['lname'] = $row['lname'];
 		$data['dob'] = $row['dob'];
-		if($i < sqlsrv_num_rows ( $tsql )){
-			$str = 'user'.$i;
-			$data[$str] = $data;
-			i++;
-		}
 		
+		$data['user'] = $data;
 	}
 }
 
