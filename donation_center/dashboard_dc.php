@@ -298,7 +298,7 @@
 				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/get_blood_response.php',
-					data: {"reqid": reqid}
+					data: {"reqid": d}
 				})
 				
 				.done(function(data) {
@@ -337,7 +337,7 @@
 				}
 				else {
 					// Open this row
-					row.child( format(2) ).show();
+					row.child( format(reqid) ).show();
 					tr.addClass('shown');
 				}
 			} );
