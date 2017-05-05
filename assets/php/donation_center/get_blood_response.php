@@ -21,10 +21,11 @@ else{
 		$data['fname'] = $row['fname'];
 		$data['lname'] = $row['lname'];
 		$data['dob'] = $row['dob'];
-		if($i < sqlsrv_num_rows ( $tsql )){
+		/*if($i < sqlsrv_num_rows ( $tsql )){
 			$data[i] = $data;
 			i++;
-		}
+		}*/
+		$data[1]=$data;
 	}
 }
 
