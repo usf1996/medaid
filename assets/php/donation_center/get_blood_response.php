@@ -20,7 +20,7 @@ else{
 		$data['fname'] = $row['fname'];
 		$data['lname'] = $row['lname'];
 		$data['dob'] = $row['dob'];
-		if($i < sqlsrv_num_rows ( resource $getResults )){
+		if($i < sqlsrv_num_rows ( $getResults )){
 			$data[i] = $data;
 			i++;
 		}
