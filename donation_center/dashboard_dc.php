@@ -153,7 +153,7 @@
 													  <th>ID</th>
 													  <th>Blood Type</th>
 													  <th>Hospital</th>
-													  <th></th>
+													  <th>User Response</th>
 													  <th></th>
 													</tr>
 											</thead>
@@ -288,30 +288,45 @@
 					"className":      'details-control',
 					"orderable":      false,
 					"data":           null,
-					"defaultContent": ''
+					"defaultContent": "<button type='button' class='btn btn-info'>View Info</button>"
 				}
 				]
 			});
 			
 			function format ( d ) {
-				// `d` is the original data object for the row
-				return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+				console.log(d);
+				$.ajax({
+					type: 'post',
+					url: '/assets/php/donation_center/get_blood_response.php',
+					data: {"reqid": reqid}
+				})
+				
+				.done(function(data) {
+					return '<table class="table table-hover">'+
+					'<thead>'+
+						'<th>First Name</th>'+
+						'<th>Last Name</th>'+
+						'<th>Phone Number</th>'+
+						'<th>Date of Birth</th>'+
+						'<th>Gender</th>'+
+					'</thead>'+
+					'<tbody>'+
 					'<tr>'+
-						'<td>Full name:</td>'+
-						'<td>'+"ommak"+'</td>'+
-					'</tr>'+
-					'<tr>'+
-						'<td>Extension number:</td>'+
-						'<td>'+"ommak"+'</td>'+
-					'</tr>'+
-					'<tr>'+
-						'<td>Extra info:</td>'+
-						'<td>And any further details here (images etc)...</td>'+
+						'<td>'+ data.fname +'</td>'+
+						'<td>'+ data.lname +'</td>'+
+						'<td>'+ data.phonenum +'</td>'+
+						'<td>'+ data.dob +'</td>'+
+						'<td>'+ data.bloodtype +'</td>'+
 					'</tr>'+
 				'</table>';
+				});
 			}
 			
 			$('#dataTables-bloodtype tbody').on('click', 'td.details-control', function () {
+				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
+				var data = delrow.data();
+				var reqid = data[0];
+				
 				var tr = $(this).closest('tr');
 				var row = dataTables_bloodtype.row( tr );
 		 
@@ -322,7 +337,7 @@
 				}
 				else {
 					// Open this row
-					row.child( format(row.data()) ).show();
+					row.child( format(reqid) ).show();
 					tr.addClass('shown');
 				}
 			} );
