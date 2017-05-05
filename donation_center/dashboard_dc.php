@@ -294,7 +294,7 @@
 			});
 			
 			function format ( d ) {
-				var data;
+				var table;
 				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/get_blood_response.php',
@@ -302,7 +302,7 @@
 				})
 				
 				.done(function(data) {
-					data = '<table class="table table-hover">'+
+					var table = '<table class="table table-hover">'+
 					'<thead>'+
 						'<th>First Name</th>'+
 						'<th>Last Name</th>'+
