@@ -312,11 +312,11 @@
 					'</thead>'+
 					'<tbody>'+
 					'<tr>'+
-						'<td>'+ data.fname +'</td>'+
-						'<td>'+ data.lname +'</td>'+
-						'<td>'+ data.phonenum +'</td>'+
-						'<td>'+ data.dob +'</td>'+
-						'<td>'+ data.bloodtype +'</td>'+
+						'<td>'+ "asd" +'</td>'+
+						'<td>'+ "asd" +'</td>'+
+						'<td>'+ "asd" +'</td>'+
+						'<td>'+ "asd" +'</td>'+
+						'<td>'+ "asd" +'</td>'+
 					'</tr>'+
 				'</table>';
 				});
