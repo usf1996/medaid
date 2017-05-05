@@ -337,7 +337,7 @@
 				}
 				else {
 					// Open this row
-					row.child( format(reqid) ).show();
+					row.child( format(2) ).show();
 					tr.addClass('shown');
 				}
 			} );
