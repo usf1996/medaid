@@ -5,7 +5,7 @@ $data = array();
 
 $id = $_POST['reqid'];
 
-$tsql= "SELECT citizen.fname, citizen.lname, citizen.bloodtype, citizen.phonenum citizen.dob
+$tsql= "SELECT citizen.fname, citizen.lname, citizen.bloodtype, citizen.phonenum, citizen.dob
         FROM accreq
         join citizen ON accreq.userid = citizen.userid AND accreq.reqid = 1";
 
