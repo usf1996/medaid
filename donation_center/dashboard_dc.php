@@ -295,31 +295,32 @@
 			
 			function format ( d ) {
 				var table;
-				/*$.ajax({
+				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/get_blood_response.php',
-					data: {"reqid": d}
+					data: {"reqid": d},
+					async: false
 				})
 				
-				.done(function(data) {*/
+				.done(function(data) {
 					table = '<table class="table table-hover">'+
-					'<thead>'+
-						'<th>First Name</th>'+
-						'<th>Last Name</th>'+
-						'<th>Phone Number</th>'+
-						'<th>Date of Birth</th>'+
-						'<th>Gender</th>'+
-					'</thead>'+
-					'<tbody>'+
-					'<tr>'+
-						'<td>'+ "asd" +'</td>'+
-						'<td>'+ "asd" +'</td>'+
-						'<td>'+ "asd" +'</td>'+
-						'<td>'+ "asd" +'</td>'+
-						'<td>'+ "asd" +'</td>'+
-					'</tr>'+
-				'</table>';
-				//});
+						'<thead>'+
+							'<th>First Name</th>'+
+							'<th>Last Name</th>'+
+							'<th>Phone Number</th>'+
+							'<th>Date of Birth</th>'+
+							'<th>Gender</th>'+
+						'</thead>'+
+						'<tbody>'+
+						'<tr>'+
+							'<td>'+ "asd" +'</td>'+
+							'<td>'+ "asd" +'</td>'+
+							'<td>'+ "asd" +'</td>'+
+							'<td>'+ "asd" +'</td>'+
+							'<td>'+ "asd" +'</td>'+
+						'</tr>'+
+					'</table>';
+				});
 				return table;
 			}
 			
