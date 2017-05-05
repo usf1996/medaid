@@ -7,7 +7,7 @@ $id = $_POST['reqid'];
 
 $tsql= "SELECT citizen.fname, citizen.lname, citizen.bloodtype, citizen.phonenum citizen.dob
         FROM accreq
-        join citizen ON accreq.userid = citizen.userid AND accreq.reqid = '$id'";
+        join citizen ON accreq.userid = citizen.userid AND accreq.reqid = 1";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
