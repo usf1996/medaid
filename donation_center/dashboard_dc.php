@@ -288,7 +288,7 @@
 					"className":      'details-control',
 					"orderable":      false,
 					"data":           null,
-					"defaultContent": "<button type='button' class='btn btn-info'>View Info</button>"
+					"defaultContent": ''
 				}
 				]
 			});
