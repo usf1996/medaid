@@ -302,7 +302,7 @@
 				})
 				
 				.done(function(data) {
-					var table = '<table class="table table-hover">'+
+					table = '<table class="table table-hover">'+
 					'<thead>'+
 						'<th>First Name</th>'+
 						'<th>Last Name</th>'+
@@ -320,7 +320,7 @@
 					'</tr>'+
 				'</table>';
 				});
-				return data;
+				return table;
 			}
 			
 			$('#dataTables-bloodtype tbody').on('click', 'td.details-control', function () {
