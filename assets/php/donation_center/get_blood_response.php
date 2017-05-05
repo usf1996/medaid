@@ -25,7 +25,7 @@ else{
 			$data[i] = $data;
 			i++;
 		}*/
-		$data["ommak"]=$data;
+		$data["user"] = $data;
 	}
 }
 
