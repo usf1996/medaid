@@ -295,13 +295,13 @@
 			
 			function format ( d ) {
 				var table;
-				$.ajax({
+				/*$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/get_blood_response.php',
 					data: {"reqid": d}
 				})
 				
-				.done(function(data) {
+				.done(function(data) {*/
 					table = '<table class="table table-hover">'+
 					'<thead>'+
 						'<th>First Name</th>'+
@@ -319,7 +319,7 @@
 						'<td>'+ "asd" +'</td>'+
 					'</tr>'+
 				'</table>';
-				});
+				//});
 				return table;
 			}
 			
