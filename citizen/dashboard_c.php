@@ -198,7 +198,7 @@
 			data: obj,
 			dataType: 'json',
 			encode: true
-			error: function(){
+			error: function(error){
 				alert("nayyak");
 			}
 		})
