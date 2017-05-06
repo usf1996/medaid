@@ -288,7 +288,8 @@
 				})
 				
 				.done(function(data) {
-					var table = '<table class="table table-hover">'+
+					console.log(data);
+					table = '<table class="table table-hover">'+
 						'<thead>'+
 							'<th>First Name</th>'+
 							'<th>Last Name</th>'+
