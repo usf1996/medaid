@@ -288,7 +288,7 @@
 				})
 				
 				.done(function(data) {
-					table = '<table class="table table-hover">'+
+					var table = '<table class="table table-hover">'+
 						'<thead>'+
 							'<th>First Name</th>'+
 							'<th>Last Name</th>'+
