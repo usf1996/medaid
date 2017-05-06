@@ -305,6 +305,7 @@
 							'<td>'+ data[i].dob +'</td>'+
 							'<td>'+ data[i].gender +'</td>'+
 						'</tr>';
+						console.log(table);
 					}
 					table += '</table>';
 				});
