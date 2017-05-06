@@ -145,7 +145,7 @@
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script>
         $(document).ready(function () {
-			var obj = JSON.parse(localStorage.getItem("loginData"));
+			var obj = JSON.parse(localStorage.getItem("rcloginData"));
 			$("#dCenterName").text(obj.dcentername);
 			$("#dCenterEmail").text(obj.email);
 			console.log(obj);
