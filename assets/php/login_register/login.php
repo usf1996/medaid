@@ -48,6 +48,9 @@ else{
 	}	
 }
 
+session_start();
+$_SESSION['loginData'] = $data;
+
 sqlsrv_free_stmt($getResults);
 echo json_encode($data);
 
