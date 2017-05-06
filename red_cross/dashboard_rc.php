@@ -138,7 +138,8 @@
     <script src="../assets/plugins/pace/pace.js"></script>
     <script src="../assets/scripts/medaid.js"></script>
 
-<!--     Page-Level Plugin Scripts-->
+<!--     Page-Level Plugin Scripts-->   
+<!--   	Graph JS-->
 <!--    Table JS-->
 	<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
