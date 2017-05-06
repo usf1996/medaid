@@ -9,7 +9,7 @@ $drivetable = array();
 $reqdata = array();
 $reqtable = array();
 
-$tsql= "SELECT blooddrive.info, blooddrive.driveid, blooddrive.drivename, blooddrive.driveloc, CONVERT(VARCHAR(11), blooddrive.sdate, 106) AS sdate, CONVERT(VARCHAR(11), blooddrive.edate, 106) AS edate
+$tsql= "SELECT info, driveid, drivename, driveloc, CONVERT(VARCHAR(11), sdate, 106) AS sdate, CONVERT(VARCHAR(11), edate, 106) AS edate
 		FROM blooddrive";
 
 $getResults= sqlsrv_query($conn, $tsql);
@@ -29,7 +29,7 @@ else{
 	$data['drivedata'] = $drivetable;
 }
 
-$tsql= "SELECT bloodreq.info, bloodreq.reqid, bloodreq.bloodtype, bloodreq.hospital
+$tsql= "SELECT info, reqid, bloodtype, hospital
 		FROM bloodreq";
 
 $getResults= sqlsrv_query($conn, $tsql);
