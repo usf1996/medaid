@@ -196,10 +196,7 @@
 			url: '/assets/php/citizen/dashboard_c.php',
 			data: obj,
 			dataType: 'json',
-			encode: true,
-			error: function(error){
-				alert("nayyak");
-			}
+			encode: true
 		})
 	  
 		.done(function(dataSet) {
@@ -248,12 +245,23 @@
 				
 				.done(function(data) {
 					alert("Blood Request Successfully Accepted");
-					delrow.remove().draw(false);
 				});
 			} );
 			
 			$('#dataTables-bloodtype tbody').on( 'click', '#cancel', function () {
+				var cancelrow = dataTables_bloodtype.row( $(this).parents('tr') );
+				var data = cancelrow.data();
+				var reqid = data[0];
+				$.ajax({
+					type: 'post',
+					url: '/assets/php/citizen/acc_blood.php',
+					data: {"reqid": reqid,
+							"userid": obj.userid}
+				})
 				
+				.done(function(data) {
+					alert("Blood Request Successfully Canceled");
+				});
 			} );
 			
 		});
