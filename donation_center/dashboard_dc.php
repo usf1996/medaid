@@ -279,6 +279,7 @@
 			
 			function format ( d ) {
 				var table;
+				console.log(d);
 				$.ajax({
 					type: 'post',
 					url: '/assets/php/donation_center/get_blood_response.php',
@@ -288,6 +289,7 @@
 				
 				.done(function(data) {
 					userdata = JSON.parse(data);
+					console.log(userdata);
 					table = '<table class="table table-hover">'+
 						'<thead>'+
 							'<th>First Name</th>'+

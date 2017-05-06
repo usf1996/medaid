@@ -6,7 +6,7 @@ $datausers = array();
 
 $id = $_POST['reqid'];
 
-$tsql= "SELECT citizen.fname, citizen.lname, citizen.bloodtype, citizen.phonenum, CONVERT(VARCHAR(11), citizen.dob, 106) AS dob
+$tsql= "SELECT citizen.fname, citizen.lname, citizen.bloodtype, citizen.phonenum, CONVERT(VARCHAR(11), citizen.dob, 106) AS dob, citizen.gender
         FROM accreq
         join citizen ON accreq.userid = citizen.userid AND accreq.reqid = 1";
 
@@ -21,6 +21,7 @@ else{
 		$data['fname'] = $row['fname'];
 		$data['lname'] = $row['lname'];
 		$data['dob'] = $row['dob'];
+		$data['gender'] = $row['gender'];
 		
 		array_push($datausers, $data);
 	}
