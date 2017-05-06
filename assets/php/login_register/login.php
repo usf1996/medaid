@@ -48,27 +48,10 @@ else{
 	}	
 }
 
-switch($data['usertype']){
-	case 0:{
-		break;
-	}
-	case 1:{
-		session_start();
-		$_SESSION['loginData'] = $data;
-		break;
-	}
-	case 2:{
-		session_start();
-		$_SESSION['loginData'] = $data;
-		exit();
-		break;
-	}
-	case 3:{
-		session_start();
-		$_SESSION['loginData'] = $data;
-		break;
-	}
-}
+
+session_start();
+$_SESSION['loginData'] = $data;
+
 
 sqlsrv_free_stmt($getResults);
 echo json_encode($data);
