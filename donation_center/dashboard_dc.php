@@ -242,6 +242,7 @@
 				}
 				]
 			});
+			console.log(d_data);
 			
 			$('#dataTables-blooddrive tbody').on( 'click', '#deldrive', function () {
 				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
