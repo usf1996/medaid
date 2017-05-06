@@ -197,7 +197,7 @@
 			url: '/assets/php/citizen/dashboard_c.php',
 			data: obj,
 			dataType: 'json',
-			encode: true
+			encode: true,
 			error: function(error){
 				alert("nayyak");
 			}
