@@ -297,7 +297,7 @@
 							'<th>Gender</th>'+
 						'</thead>'+
 						'<tbody>';
-					for(i = 0; i < data.datausers.length; i++){
+					for(i = 0; i < data.length; i++){
 						table += '<tr>'+
 							'<td>'+ data[i].fname +'</td>'+
 							'<td>'+ data[i].lname +'</td>'+
