@@ -138,11 +138,7 @@
     <script src="../assets/plugins/pace/pace.js"></script>
     <script src="../assets/scripts/medaid.js"></script>
 
-<!--     Page-Level Plugin Scripts-->   
-<!--   	Graph JS-->
-    <script src="../assets/plugins/morris/raphael-2.1.0.min.js"></script>
-    <script src="../assets/plugins/morris/morris.js"></script>
-    <script src="../assets/scripts/morris-demo.js"></script>
+<!--     Page-Level Plugin Scripts-->
 <!--    Table JS-->
 	<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
