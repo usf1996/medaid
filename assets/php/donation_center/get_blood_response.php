@@ -15,7 +15,6 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
 	echo (sqlsrv_errors());
 else{
-	$i = 1;
 	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 		$data['phonenum'] = $row['phonenum'];
 		$data['bloodtype'] = $row['bloodtype'];
@@ -23,7 +22,7 @@ else{
 		$data['lname'] = $row['lname'];
 		$data['dob'] = $row['dob'];
 		
-		array_push($datausers, $drivedata);
+		array_push($datausers, $data);
 	}
 }
 
