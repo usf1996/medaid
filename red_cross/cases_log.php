@@ -115,19 +115,19 @@
                         <td>usf1996</td>
                         <td>Youssef</td>
                         <td>El Khoury</td>
-                        <td>Software....easy</td>
+                        <td>Heart Attack</td>
                         <td class="center">06-April-2017</td>
                         <td class="center">07:18:34 PM</td>
-                        <td>Sarah C. &#60;3</td>
+                        <td>Pending</td>
                       </tr>
                       <tr>
                         <td>sara96</td>
                         <td>Sarah</td>
                         <td>Cattan</td>
-                        <td>Zouein</td>
+                        <td>Broken Leg</td>
                         <td class="center">06-April-2017</td>
                         <td class="center">07:18:34 PM</td>
-                        <td>usf &#60;3</td>
+                        <td>Done</td>
                       </tr>
 					</tbody>
                   </table>

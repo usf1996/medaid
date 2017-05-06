@@ -164,12 +164,16 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>usf1996</td>
-                          <td>Youssef</td>
+                          <td>Spider Bite</td>
+                          <td>Clean the wound. Use mild soap and water and apply an antibiotic ointment.
+Apply a cool compress. Use a cloth dampened with cold water or filled with ice. This helps reduce pain and swelling. If the bite is on an arm or leg, elevate it.</td>
                         </tr>
                         <tr>
-                          <td>sara96</td>
-                          <td>Sarah</td>
+                          <td>Broken Leg</td>
+                          <td>Stop any bleeding. Apply pressure to the wound with a sterile bandage, a clean cloth or a clean piece of clothing.
+Immobilize the injured area. Don't try to realign the bone or push a bone that's sticking out back in. If you've been trained in how to splint and professional help isn't readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort.
+Apply ice packs to limit swelling and help relieve pain. Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material.
+Treat for shock. If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs.</td>
                         </tr>
                       </tbody>
                     </table>
