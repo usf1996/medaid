@@ -23,10 +23,11 @@ else{
 		$data['dob'] = $row['dob'];
 		
 		array_push($datausers, $data);
+		$data['datausers'] = $datausers
 	}
 }
 
 sqlsrv_free_stmt($getResults);
-echo json_encode($datausers);
+echo json_encode($data);
 
 ?>
