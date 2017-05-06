@@ -289,6 +289,7 @@
 				
 				.done(function(data) {
 					userdata = JSON.parse(data);
+					
 					console.log(userdata);
 					table = '<table class="table table-hover">'+
 						'<thead>'+
