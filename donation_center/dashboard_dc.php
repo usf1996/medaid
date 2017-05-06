@@ -308,7 +308,8 @@
 					}
 					table += '</tbody></table>';
 				});
-				console.log(table);
+				console.log(data.length);
+				console.log(data[0].lname);
 				return table;
 			}
 			
