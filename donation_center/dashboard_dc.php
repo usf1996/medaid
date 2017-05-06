@@ -307,9 +307,9 @@
 						'</tr>';
 					}
 					table += '</tbody></table>';
+					console.log(data.length);
+					console.log(data[0].lname);
 				});
-				console.log(data.length);
-				console.log(data[0].lname);
 				return table;
 			}
 			
