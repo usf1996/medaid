@@ -307,6 +307,7 @@
 						'</tr>';
 					}
 					table += '</tbody></table>';
+					console.log(table);
 				});
 				return table;
 			}
