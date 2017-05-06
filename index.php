@@ -205,6 +205,7 @@
 							break;
 						}
 						case 3:{
+							localStorage.setItem("loginData", JSON.stringify(data));
 							window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
 							break;
 						}

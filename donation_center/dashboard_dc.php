@@ -238,12 +238,12 @@
 				"columnDefs": [ {
 					"targets": -1,
 					"data": null,
-					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+					"defaultContent": "<button id='deldrive' type='button' class='btn btn-danger'>Delete</button>"
 				}
 				]
 			});
 			
-			$('#dataTables-blooddrive tbody').on( 'click', 'button', function () {
+			$('#dataTables-blooddrive tbody').on( 'click', '#deldrive', function () {
 				var delrow = dataTables_blooddrive.row( $(this).parents('tr') );
 				var data = delrow.data();
 				var driveid = data[0];
@@ -265,7 +265,7 @@
 				"columnDefs": [ {
 					"targets": -1,
 					"data": null,
-					"defaultContent": "<button id='delbutton' type='button' class='btn btn-danger'>Delete</button>"
+					"defaultContent": "<button id='delblood' type='button' class='btn btn-danger'>Delete</button>"
 				},
 				{
 					"targets": -2,
@@ -295,7 +295,6 @@
 							'<th>Phone Number</th>'+
 							'<th>Date of Birth</th>'+
 							'<th>Gender</th>'+
-							'<th></th>'+
 						'</thead>'+
 						'<tbody>';
 					for(i = 0; i < userdata.length; i++){
@@ -308,7 +307,6 @@
 						'</tr>';
 					}
 					table += '</tbody></table>';
-					console.log(table);
 				});
 				return table;
 			}
@@ -333,7 +331,7 @@
 				}
 			} );
 			
-			$('#dataTables-bloodtype tbody').on( 'click', '#delbutton', function () {
+			$('#dataTables-bloodtype tbody').on( 'click', '#delblood', function () {
 				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
 				var data = delrow.data();
 				var reqid = data[0];

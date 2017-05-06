@@ -92,12 +92,11 @@
                     <li>
                         <!-- user image section-->
                         <div class="user-section">
-                            <div class="user-info">
-                                <div>Jonny <strong>Deen</strong></div>
+                            <span id="dCenterName"></span>
                                 <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>
+									<span id="dCenterEmail"><span>
                                 </div>
-                            </div>
                         </div>
                         <!--end user image section-->
                     </li>
@@ -149,6 +148,10 @@
     <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script>
         $(document).ready(function () {
+			var obj = JSON.parse(localStorage.getItem("loginData"));
+			$("#dCenterName").text(obj.dcentername);
+			$("#dCenterEmail").text(obj.email);
+
             $('#dataTables-example').dataTable();
         });
     </script>
