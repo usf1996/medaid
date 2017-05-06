@@ -182,35 +182,9 @@
 					type: 'post',
 					url: 'assets/php/login_register/login.php',
 					data: formData,
-					dataType: 'json',
-					encode: true,
 					error: function (jqXHR, exception) {
 								getErrorMessage(jqXHR, exception);
 							}
-				})
-			  
-				.done(function(data) {
-					switch(data['usertype']){
-						case 0:{
-							alert("Wrong Login Credentials, Please Try Again");
-							break;
-						}
-						case 1:{
-							localStorage.setItem("loginData", JSON.stringify(data));
-							window.location = 'http://medaid.azurewebsites.net/citizen/dashboard_c.php';
-							break;
-						}
-						case 2:{
-							localStorage.setItem("loginData", JSON.stringify(data));
-							window.location = 'http://medaid.azurewebsites.net/donation_center/dashboard_dc.php';
-							break;
-						}
-						case 3:{
-							localStorage.setItem("loginData", JSON.stringify(data));
-							window.location = 'http://medaid.azurewebsites.net/red_cross/dashboard_rc.php';
-							break;
-						}
-					}
 				});
 			});
 		});

@@ -48,7 +48,30 @@ else{
 	}	
 }
 
+session_start();
+
+switch($data['usertype']){
+	case 0:{
+		echo '<script>alert("Wrong Login Credentials, Please Try Again")</script>';
+		break;
+	}
+	case 1:{
+		$_SESSION['loginData'] = $data;
+		header("Location: http://medaid.azurewebsites.net/citizen/dashboard_c.php");
+		break;
+	}
+	case 2:{
+		$_SESSION['loginData'] = $data;
+		header("Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php");
+		break;
+	}
+	case 3:{
+		$_SESSION['loginData'] = $data;
+		header("Location: http://medaid.azurewebsites.net/red_cross/dashboard_rc.php");
+		break;
+	}
+}
+
 sqlsrv_free_stmt($getResults);
-echo json_encode($data);
 
 ?>
