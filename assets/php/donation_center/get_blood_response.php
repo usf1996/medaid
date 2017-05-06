@@ -28,6 +28,6 @@ else{
 }
 
 sqlsrv_free_stmt($getResults);
-echo json_encode($data);
+echo json_encode($datausers);
 
 ?>
