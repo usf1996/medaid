@@ -2,6 +2,7 @@
 include 'connect.php';
 
 $data = array();
+$datausers = array();
 
 $id = $_POST['reqid'];
 
@@ -22,7 +23,7 @@ else{
 		$data['lname'] = $row['lname'];
 		$data['dob'] = $row['dob'];
 		
-		$data['user'] = $data;
+		array_push($datausers, $drivedata);
 	}
 }
 
