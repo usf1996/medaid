@@ -265,7 +265,7 @@
 				"columnDefs": [ {
 					"targets": -1,
 					"data": null,
-					"defaultContent": "<button type='button' class='btn btn-danger'>Delete</button>"
+					"defaultContent": "<button id='delbutton' type='button' class='btn btn-danger'>Delete</button>"
 				},
 				{
 					"targets": -2,
@@ -333,7 +333,7 @@
 				}
 			} );
 			
-			$('#dataTables-bloodtype tbody').on( 'click', 'button', function () {
+			$('#dataTables-bloodtype tbody').on( 'click', '#delbutton', function () {
 				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
 				var data = delrow.data();
 				var reqid = data[0];
