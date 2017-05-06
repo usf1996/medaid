@@ -151,6 +151,7 @@
 			var obj = JSON.parse(localStorage.getItem("loginData"));
 			$("#dCenterName").text(obj.dcentername);
 			$("#dCenterEmail").text(obj.email);
+			console.log(obj);
 
             $('#dataTables-example').dataTable();
         });
