@@ -296,15 +296,17 @@
 							'<th>Date of Birth</th>'+
 							'<th>Gender</th>'+
 						'</thead>'+
-						'<tbody>'+
-						'<tr>'+
-							'<td>'+ data.fname +'</td>'+
-							'<td>'+ data.lname +'</td>'+
-							'<td>'+ data.phonenum +'</td>'+
-							'<td>'+ data.dob +'</td>'+
-							'<td>'+ data.gender +'</td>'+
-						'</tr>'+
-					'</table>';
+						'<tbody>';
+					for(i = 0; i < data.length; i++){
+						table += '<tr>'+
+							'<td>'+ data[i].fname +'</td>'+
+							'<td>'+ data[i].lname +'</td>'+
+							'<td>'+ data[i].phonenum +'</td>'+
+							'<td>'+ data[i].dob +'</td>'+
+							'<td>'+ data[i].gender +'</td>'+
+						'</tr>';
+					}
+					table += '</table>';
 				});
 				return table;
 			}
