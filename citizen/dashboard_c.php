@@ -158,7 +158,6 @@
 										  <th>Location</th>
 										  <th>Start Date</th>
 										  <th>End Date</th>
-										  <th>Extra Info</th>
 										</tr>
 									</thead>
 								  </table>
@@ -208,11 +207,11 @@
 			var r_data = [];
 			
 			for(i = 0; i < dataSet.drivedata.length; i++){
-				d_data.push([dataSet.drivedata[i].driveid, dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate, dataSet.drivedata[i].info]);
+				d_data.push([dataSet.drivedata[i].driveid, dataSet.drivedata[i].drivename, dataSet.drivedata[i].driveloc, dataSet.drivedata[i].sdate, dataSet.drivedata[i].edate]);
 			}
 			
 			for(i = 0; i < dataSet.reqdata.length; i++){
-				r_data.push([dataSet.reqdata[i].reqid, dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital, dataSet.reqdata[i].info]);
+				r_data.push([dataSet.reqdata[i].reqid, dataSet.reqdata[i].bloodtype, dataSet.reqdata[i].hospital]);
 			}
 			
 			var dataTables_blooddrive = $('#dataTables-blooddrive').DataTable( {
