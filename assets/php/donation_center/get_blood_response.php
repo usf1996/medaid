@@ -24,7 +24,6 @@ else{
 		
 		array_push($datausers, $data);
 	}
-	
 }
 
 sqlsrv_free_stmt($getResults);

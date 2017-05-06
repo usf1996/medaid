@@ -278,7 +278,6 @@
 			});
 			
 			function format ( d ) {
-				console.log(d);
 				var table;
 				$.ajax({
 					type: 'post',
@@ -288,7 +287,7 @@
 				})
 				
 				.done(function(data) {
-					console.log(data);
+					console.log(JSON.parse(data));
 					table = '<table class="table table-hover">'+
 						'<thead>'+
 							'<th>First Name</th>'+
@@ -309,7 +308,7 @@
 					}
 					table += '</tbody></table>';
 					console.log(data.length);
-					console.log(data[0].lname);
+					console.log(data[0]);
 				});
 				return table;
 			}
