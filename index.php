@@ -196,7 +196,8 @@
 							break;
 						}
 						case 1:{
-							header('Location: http://medaid.azurewebsites.net/');
+							localStorage.setItem("loginData", JSON.stringify(data));
+							header('Location: http://medaid.azurewebsites.net/citizen/dashboard_c');
 							break;
 						}
 						case 2:{
