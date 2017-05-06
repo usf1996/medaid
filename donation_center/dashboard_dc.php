@@ -306,7 +306,7 @@
 							'<td>'+ data[i].gender +'</td>'+
 						'</tr>';
 					}
-					table += '</table>';
+					table += '</tbody></table>';
 				});
 				console.log(table);
 				return table;
