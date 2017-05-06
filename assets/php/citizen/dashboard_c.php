@@ -9,7 +9,7 @@ $drivetable = array();
 $reqdata = array();
 $reqtable = array();
 
-$tsql= "SELECT info, driveid, drivename, driveloc, CONVERT(VARCHAR(11), sdate, 106) AS sdate, CONVERT(VARCHAR(11), edate, 106) AS edate
+$tsql= "SELECT driveid, drivename, driveloc, CONVERT(VARCHAR(11), sdate, 106) AS sdate, CONVERT(VARCHAR(11), edate, 106) AS edate
 		FROM blooddrive";
 
 $getResults= sqlsrv_query($conn, $tsql);
@@ -23,13 +23,12 @@ else{
 		$drivedata['driveloc'] = $row['driveloc'];
 		$drivedata['sdate'] = $row['sdate'];
 		$drivedata['edate'] = $row['edate'];
-		$drivedata['info'] = $row['info'];
 		array_push($drivetable, $drivedata);
 	}
 	$data['drivedata'] = $drivetable;
 }
 
-$tsql= "SELECT info, reqid, bloodtype, hospital
+$tsql= "SELECT reqid, bloodtype, hospital
 		FROM bloodreq";
 
 $getResults= sqlsrv_query($conn, $tsql);
@@ -41,7 +40,6 @@ else{
 		$reqdata['reqid'] = $row['reqid'];
 		$reqdata['bloodtype'] = $row['bloodtype'];
 		$reqdata['hospital'] = $row['hospital'];
-		$reqdata['info'] = $row['info'];
 		array_push($reqtable, $reqdata);
 	}
 	$data['reqdata'] = $reqtable;

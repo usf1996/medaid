@@ -189,11 +189,15 @@
 	$(document).ready(function() {
 		var obj = JSON.parse(localStorage.getItem("loginData"));
 		
+		$("#dCenterName").text(obj.username);
+		$("#dCenterEmail").text(obj.email);
+		
 		$.ajax({
 			type: 'post',
 			url: '/assets/php/citizen/dashboard_c.php',
+			data: obj,
 			dataType: 'json',
-			encode: true,
+			encode: true
 			error: function(error){
 				alert("nayyak");
 			}
