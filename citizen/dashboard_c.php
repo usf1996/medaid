@@ -254,7 +254,7 @@
 				var reqid = data[0];
 				$.ajax({
 					type: 'post',
-					url: '/assets/php/citizen/acc_blood.php',
+					url: '/assets/php/citizen/cancel_blood.php',
 					data: {"reqid": reqid,
 							"userid": obj.userid}
 				})
