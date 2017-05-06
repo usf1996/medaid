@@ -63,6 +63,7 @@ switch($data['usertype']){
 	case 2:{
 		$_SESSION['loginData'] = $data;
 		header("Location: http://medaid.azurewebsites.net/donation_center/dashboard_dc.php");
+		exit();
 		break;
 	}
 	case 3:{
