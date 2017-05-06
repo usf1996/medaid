@@ -272,7 +272,7 @@
 					"className":      'details-control',
 					"orderable":      false,
 					"data":           null,
-					"defaultContent": ''
+					"defaultContent": "<button id='viewresp' type='button' class='btn btn-info'>View Responses</button>"
 				}
 				]
 			});
@@ -295,6 +295,7 @@
 							'<th>Phone Number</th>'+
 							'<th>Date of Birth</th>'+
 							'<th>Gender</th>'+
+							'<th></th>'+
 						'</thead>'+
 						'<tbody>';
 					for(i = 0; i < userdata.length; i++){
@@ -312,7 +313,7 @@
 				return table;
 			}
 			
-			$('#dataTables-bloodtype tbody').on('click', 'td.details-control', function () {
+			$('#dataTables-bloodtype tbody').on('click', '#viewresp', function () {
 				var delrow = dataTables_bloodtype.row( $(this).parents('tr') );
 				var data = delrow.data();
 				var reqid = data[0];
