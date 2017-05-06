@@ -287,7 +287,7 @@
 				})
 				
 				.done(function(data) {
-					console.log(JSON.parse(data));
+					userdata = JSON.parse(data);
 					table = '<table class="table table-hover">'+
 						'<thead>'+
 							'<th>First Name</th>'+
@@ -297,18 +297,16 @@
 							'<th>Gender</th>'+
 						'</thead>'+
 						'<tbody>';
-					for(i = 0; i < data.length; i++){
+					for(i = 0; i < userdata.length; i++){
 						table += '<tr>'+
-							'<td>'+ data[i].fname +'</td>'+
-							'<td>'+ data[i].lname +'</td>'+
-							'<td>'+ data[i].phonenum +'</td>'+
-							'<td>'+ data[i].dob +'</td>'+
-							'<td>'+ data[i].gender +'</td>'+
+							'<td>'+ userdata[i].fname +'</td>'+
+							'<td>'+ userdata[i].lname +'</td>'+
+							'<td>'+ userdata[i].phonenum +'</td>'+
+							'<td>'+ userdata[i].dob +'</td>'+
+							'<td>'+ userdata[i].gender +'</td>'+
 						'</tr>';
 					}
 					table += '</tbody></table>';
-					console.log(data.length);
-					console.log(data[0]);
 				});
 				return table;
 			}
