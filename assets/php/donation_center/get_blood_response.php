@@ -8,7 +8,7 @@ $id = $_POST['reqid'];
 
 $tsql= "SELECT citizen.fname, citizen.lname, citizen.bloodtype, citizen.phonenum, CONVERT(VARCHAR(11), citizen.dob, 106) AS dob, citizen.gender
         FROM accreq
-        join citizen ON accreq.userid = citizen.userid AND accreq.reqid = 1";
+        join citizen ON accreq.userid = citizen.userid AND accreq.reqid = '$id'";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
