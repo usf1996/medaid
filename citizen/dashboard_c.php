@@ -201,6 +201,7 @@
 		})
 	  
 		.done(function(dataSet) {
+			alert("ommak");
 			var d_data = [];
 			var r_data = [];
 			

@@ -9,7 +9,6 @@ $drivetable = array();
 $reqdata = array();
 $reqtable = array();
 
-$id = $_POST['dcenterid'];
 $tsql= "SELECT blooddrive.info, blooddrive.driveid, blooddrive.drivename, blooddrive.driveloc, CONVERT(VARCHAR(11), blooddrive.sdate, 106) AS sdate, CONVERT(VARCHAR(11), blooddrive.edate, 106) AS edate
 		FROM blooddrive";
 
