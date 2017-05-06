@@ -198,10 +198,12 @@
 			data: obj,
 			dataType: 'json',
 			encode: true
+			error: function(){
+				alert("nayyak");
+			}
 		})
 	  
 		.done(function(dataSet) {
-			alert("ommak");
 			var d_data = [];
 			var r_data = [];
 			
