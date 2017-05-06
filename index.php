@@ -186,7 +186,7 @@
 					encode: true,
 					error: function (jqXHR, exception) {
 								getErrorMessage(jqXHR, exception);
-							}
+							},
 				})
 			  
 				.done(function(data) {
