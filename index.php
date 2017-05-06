@@ -197,7 +197,7 @@
 						}
 						case 1:{
 							localStorage.setItem("loginData", JSON.stringify(data));
-							window.location = 'http://medaid.azurewebsites.net/citizen/dashboard_c';
+							window.location = 'http://medaid.azurewebsites.net/citizen/dashboard_c.php';
 							break;
 						}
 						case 2:{
