@@ -23,8 +23,9 @@ else{
 		$data['dob'] = $row['dob'];
 		
 		array_push($datausers, $data);
-		$data['datausers'] = $datausers
 	}
+	
+	$data['datausers'] = $datausers;
 }
 
 sqlsrv_free_stmt($getResults);
